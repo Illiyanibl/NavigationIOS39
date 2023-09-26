@@ -12,6 +12,8 @@
 		51B05CC82AC2BCAF00AF91DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC72AC2BCAF00AF91DC /* ViewController.swift */; };
 		51B05CCD2AC2BCB000AF91DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */; };
 		51B05CD02AC2BCB000AF91DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */; };
+		51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD72AC2C43200AF91DC /* FeedViewController.swift */; };
+		51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51B05CCF2AC2BCB000AF91DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51B05CD12AC2BCB000AF91DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51B05CD72AC2C43200AF91DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */,
 				51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */,
 				51B05CC72AC2BCAF00AF91DC /* ViewController.swift */,
+				51B05CD72AC2C43200AF91DC /* FeedViewController.swift */,
+				51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */,
 				51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */,
 				51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */,
 				51B05CD12AC2BCB000AF91DC /* Info.plist */,
@@ -136,6 +142,8 @@
 			files = (
 				51B05CC82AC2BCAF00AF91DC /* ViewController.swift in Sources */,
 				51B05CC42AC2BCAF00AF91DC /* AppDelegate.swift in Sources */,
+				51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */,
+				51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */,
 				51B05CC62AC2BCAF00AF91DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,10 +288,9 @@
 				INFOPLIST_FILE = "BlinoviOS-39_Navigation_0/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,10 +316,9 @@
 				INFOPLIST_FILE = "BlinoviOS-39_Navigation_0/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
