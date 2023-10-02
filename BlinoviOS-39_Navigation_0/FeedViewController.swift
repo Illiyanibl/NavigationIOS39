@@ -7,6 +7,7 @@
 
 import UIKit
 class FeedViewController: UIViewController {
+
     let showPostButtonCornerRadius: CGFloat = 20
     lazy var showPostButton: UIButton = {
         let button = UIButton()
@@ -18,7 +19,12 @@ class FeedViewController: UIViewController {
         button.addTarget(nil, action: #selector(showPostButtonPressed), for: .touchUpInside)
         return button
     }()
+
     @objc func showPostButtonPressed() {
+        let post = Post(title: "Заголовок поста", text: "Текст поста")
+        let postViewController = PostViewController()
+        postViewController.getPost = post
+        navigationController?.pushViewController(postViewController, animated: true)
 
     }
     override func viewDidLoad() {
@@ -29,6 +35,7 @@ class FeedViewController: UIViewController {
         view.addSubview(showPostButton)
         setupConstraints()
     }
+    
         private func setupConstraints(){
             NSLayoutConstraint.activate([
                 showPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
