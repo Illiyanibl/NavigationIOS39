@@ -10,6 +10,7 @@
 		512220B72AC95D7000CDCD66 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220B62AC95D7000CDCD66 /* Post.swift */; };
 		512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220B82AC95E5E00CDCD66 /* PostViewController.swift */; };
 		512220BB2AC96AC400CDCD66 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220BA2AC96AC400CDCD66 /* InfoViewController.swift */; };
+		512220BE2ACBD32700CDCD66 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220BD2ACBD32700CDCD66 /* ProfileHeaderView.swift */; };
 		51B05CC42AC2BCAF00AF91DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */; };
 		51B05CC62AC2BCAF00AF91DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */; };
 		51B05CC82AC2BCAF00AF91DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC72AC2BCAF00AF91DC /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		512220B62AC95D7000CDCD66 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		512220B82AC95E5E00CDCD66 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		512220BA2AC96AC400CDCD66 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		512220BD2ACBD32700CDCD66 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		51B05CC02AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinoviOS-39_Navigation_0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		512220BC2ACBD2E800CDCD66 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				512220BD2ACBD32700CDCD66 /* ProfileHeaderView.swift */,
+				51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		51B05CB72AC2BCAF00AF91DC = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +75,17 @@
 		51B05CC22AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */ = {
 			isa = PBXGroup;
 			children = (
-				51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */,
 				51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */,
+				51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */,
 				51B05CC72AC2BCAF00AF91DC /* ViewController.swift */,
 				51B05CD72AC2C43200AF91DC /* FeedViewController.swift */,
-				51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */,
 				51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */,
 				51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */,
 				51B05CD12AC2BCB000AF91DC /* Info.plist */,
 				512220B62AC95D7000CDCD66 /* Post.swift */,
 				512220B82AC95E5E00CDCD66 /* PostViewController.swift */,
 				512220BA2AC96AC400CDCD66 /* InfoViewController.swift */,
+				512220BC2ACBD2E800CDCD66 /* Profile */,
 			);
 			path = "BlinoviOS-39_Navigation_0";
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 				51B05CC42AC2BCAF00AF91DC /* AppDelegate.swift in Sources */,
 				512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */,
 				51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */,
+				512220BE2ACBD32700CDCD66 /* ProfileHeaderView.swift in Sources */,
 				512220B72AC95D7000CDCD66 /* Post.swift in Sources */,
 				51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */,
 				512220BB2AC96AC400CDCD66 /* InfoViewController.swift in Sources */,
