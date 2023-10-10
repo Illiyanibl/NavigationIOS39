@@ -9,6 +9,7 @@ import UIKit
 class ProfileHeaderView: UIView {
 
     var avatarSize  = (UIScreen.main.bounds.size.width - 32) / 2.8
+
     lazy var avatarView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -19,6 +20,7 @@ class ProfileHeaderView: UIView {
         image.layer.borderColor = UIColor.white.cgColor
         return image
     }()
+
     lazy var nameLabel: UILabel = {
         let label =  UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +28,7 @@ class ProfileHeaderView: UIView {
         label.text = "View point"
         return label
     }()
+
     lazy var statusLabel: UILabel = {
         let label =  UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +67,7 @@ class ProfileHeaderView: UIView {
         textField.addTarget(nil, action: #selector(statusTextChanged), for: .editingChanged)
         return textField
     }()
+
     private var statusText: String = ""
 
     override init(frame: CGRect) {
@@ -71,12 +75,10 @@ class ProfileHeaderView: UIView {
         setupView()
         setupConstraints()
 
-
-
     }
     private func setupView(){
         self.backgroundColor = .lightGray
-        [avatarView, nameLabel, showStatusButton, statusTextField, statusLabel].forEach() {self.addSubview($0)}
+        self.addSubviews([avatarView, nameLabel, showStatusButton, statusTextField, statusLabel])
 
     }
     @objc func statusTextChanged(){
@@ -105,6 +107,7 @@ class ProfileHeaderView: UIView {
             showStatusButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             showStatusButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             showStatusButton.heightAnchor.constraint(equalToConstant: 50),
+            showStatusButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
 
             statusTextField.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             statusTextField.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
