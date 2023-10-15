@@ -7,32 +7,32 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+final class LogInViewController: UIViewController {
 
-    let colorSet = UIColor(hex: "#d3d3d3")
+    private let colorSet = UIColor(hex: "#d3d3d3")
 
-    lazy var scrollView: UIScrollView = {
+
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsVerticalScrollIndicator = true
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-    lazy var contentView: UIView = {
+    private let contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .purple
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    lazy var logoImage: UIImageView = {
+    private let logoImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "logo")
         return image
     }()
 
-    private lazy var authorizationViewGroup: UIStackView = {
+    private let authorizationViewGroup: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.clipsToBounds = true
@@ -51,7 +51,7 @@ class LogInViewController: UIViewController {
         text.backgroundColor = .systemGray6
         text.textColor = .black
         text.translatesAutoresizingMaskIntoConstraints = false
-   //     text.delegate = self
+        text.delegate = self
         return text
     }()
 
@@ -64,7 +64,7 @@ class LogInViewController: UIViewController {
         text.indent(size: 16)
         text.isSecureTextEntry = true
         text.translatesAutoresizingMaskIntoConstraints = false
-    //    text.delegate = self
+        text.delegate = self
         return text
     }()
 
@@ -75,6 +75,17 @@ class LogInViewController: UIViewController {
         return view
     }()
 
+    private lazy var loginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setBackgroundImage(UIImage(named: "bluePixel"), for: .normal)
+        button.setTitle("Log In", for: .normal)
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.addTarget(nil, action: #selector(pressLoginButton), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(allEventsLoginButton), for: .allEvents)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,13 +101,69 @@ class LogInViewController: UIViewController {
 
     private func setupSubViews(){
         view.addSubview(scrollView)
+        setupLoginButton()
         scrollView.addSubview(contentView)
-        authorizationViewGroup.addArrangedSubview(loginText)
-        authorizationViewGroup.addArrangedSubview(separatorView)
-        authorizationViewGroup.addArrangedSubview(passwordText)
-       // authorizationViewGroup.addSubviews([loginText,separatorView, passwordText])
-        contentView.addSubviews([logoImage, authorizationViewGroup])
+        authorizationViewGroup.addArrangedSubviews([
+            loginText,
+            separatorView,
+            passwordText,
+        ])
+        contentView.addSubviews([logoImage, authorizationViewGroup, loginButton])
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupLoginButton()
+        NotificationCenter.default.addObserver(self, selector: #selector(willShowKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willHideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc private func willShowKeyboard(notification: NSNotification) {
+        if let keyboardSize: CGRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            scrollView.contentInset.bottom = keyboardSize.height
+            scrollView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0,
+                                                                    left: 0,
+                                                                    bottom: keyboardSize.height,
+                                                                    right: 0)
+        }
+    }
+
+    @objc private func willHideKeyboard() {
+        scrollView.contentInset.bottom = .zero
+        scrollView.verticalScrollIndicatorInsets = .zero
+    }
+
+    @objc private func pressLoginButton(){
+        let profileViewController = ProfileViewController()
+        loginButton.isEnabled = false
+        navigationController?.pushViewController(profileViewController, animated: true)
+
+    }
+    @objc private func allEventsLoginButton(){
+        setupLoginButton()
+    }
+
+    private func setupLoginButton(){
+        print(loginButton.state.rawValue)
+        switch loginButton.state.rawValue {
+        case 0:
+            loginButton.alpha = 1
+        case 1:
+            loginButton.alpha = 0.8
+        case 2:
+            loginButton.alpha = 0.8
+        case 3:
+            loginButton.alpha = 0.8
+        default:
+            loginButton.alpha = 1
+        }
     }
 
     private func setupConstraints(){
@@ -111,7 +178,6 @@ class LogInViewController: UIViewController {
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 800),
 
             logoImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 120),
             logoImage.widthAnchor.constraint(equalToConstant: 100),
@@ -126,7 +192,17 @@ class LogInViewController: UIViewController {
             loginText.heightAnchor.constraint(equalToConstant: 49.5),
             passwordText.heightAnchor.constraint(equalToConstant: 49.5),
 
-
+            loginButton.topAnchor.constraint(equalTo: authorizationViewGroup.bottomAnchor, constant: 16),
+            loginButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            loginButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+            loginButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
+    }
+}
+extension LogInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }

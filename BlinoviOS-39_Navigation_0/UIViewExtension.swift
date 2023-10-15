@@ -9,9 +9,25 @@ import UIKit
 
 extension UIView {
     func addSubviews(_ subviesList: [UIView]) {
-        subviesList.forEach(){ self.addSubview($0)}
+        subviesList.forEach(){
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview($0)}
     }
 }
+
+extension UIStackView {
+    func addArrangedSubviews(_ subviesList: [UIView]) {
+        subviesList.forEach(){ self.addArrangedSubview($0)}
+    }
+}
+
+extension UITextField {
+    func indent(size:CGFloat) {
+        self.leftView = UIView(frame: CGRect(x: self.frame.minX, y: self.frame.minY, width: size, height: self.frame.height))
+        self.leftViewMode = .always
+    }
+}
+
 extension UIColor {
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat
@@ -37,12 +53,5 @@ extension UIColor {
         }
 
         return nil
-    }
-}
-
-extension UITextField {
-    func indent(size:CGFloat) {
-        self.leftView = UIView(frame: CGRect(x: self.frame.minX, y: self.frame.minY, width: size, height: self.frame.height))
-        self.leftViewMode = .always
     }
 }
