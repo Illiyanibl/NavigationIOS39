@@ -12,6 +12,7 @@ class FeedViewController: UIViewController {
     lazy var showPostButton: UIButton = {
         let button = UIButton()
         button.setTitle("Post", for: .normal)
+
         button.setTitleColor(.systemRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white

@@ -10,7 +10,6 @@ class PostViewController: UIViewController {
     var getPost: Post?
     lazy var rightButton : UIBarButtonItem = UIBarButtonItem(title: "Info", style: UIBarButtonItem.Style.plain, target: self, action: #selector(openInfo))
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         rightButton.tintColor = .black
