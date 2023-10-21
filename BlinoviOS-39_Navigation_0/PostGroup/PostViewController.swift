@@ -15,7 +15,7 @@ class PostViewController: UIViewController {
         rightButton.tintColor = .black
         view.backgroundColor = .systemRed
         self.navigationItem.rightBarButtonItem = rightButton
-       let post = (getPost ?? Post(title: "no Data", text: "no Data"))
+       let post = (getPost ?? Post(title: "no Data", text: "no Data", author: "no author", description: "no", image: "no"))
                 title = post.title
 
     }

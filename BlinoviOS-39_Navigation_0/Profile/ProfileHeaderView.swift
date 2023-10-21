@@ -8,7 +8,7 @@
 import UIKit
 class ProfileHeaderView: UIView {
 
-    var avatarSize  = (UIScreen.main.bounds.size.width - 32) / 2.8
+    var avatarSize: CGFloat  = 120
 
     lazy var avatarView: UIImageView = {
         let image = UIImageView()
@@ -94,18 +94,19 @@ class ProfileHeaderView: UIView {
 
     private func setupConstraints(){
         NSLayoutConstraint.activate([
+            
             avatarView.heightAnchor.constraint(equalToConstant: avatarSize),
             avatarView.widthAnchor.constraint(equalToConstant: avatarSize),
-            avatarView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            avatarView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             avatarView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
 
-            nameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 27),
-            nameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 27),
+            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             nameLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 27),
 
             showStatusButton.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 16),
-            showStatusButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            showStatusButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            showStatusButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            showStatusButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             showStatusButton.heightAnchor.constraint(equalToConstant: 50),
             showStatusButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
 

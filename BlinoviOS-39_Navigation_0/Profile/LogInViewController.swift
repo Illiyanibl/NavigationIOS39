@@ -151,7 +151,6 @@ final class LogInViewController: UIViewController {
     }
 
     private func setupLoginButton(){
-        print(loginButton.state.rawValue)
         switch loginButton.state.rawValue {
         case 0:
             loginButton.alpha = 1
