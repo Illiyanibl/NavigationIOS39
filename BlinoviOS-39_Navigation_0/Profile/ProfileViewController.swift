@@ -8,6 +8,7 @@
 import UIKit
 class ProfileViewController: UIViewController {
 
+    let zeroFrame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     private let posts = Post.createPost()
 
     lazy var  postTable: UITableView = {
@@ -16,6 +17,7 @@ class ProfileViewController: UIViewController {
         table.dataSource = self
         table.delegate = self
         table.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+        table.register(PhotosTableViewCell.self, forCellReuseIdentifier: PhotosTableViewCell.identifier)
         return table
     }()
 
@@ -30,9 +32,7 @@ class ProfileViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-    
 
-           //не стал делать высоту 220 - в ProfileHeaderView высота view связана с bottomAnchor кнопки Show status 
             postTable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             postTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             postTable.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -44,29 +44,39 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let header = ProfileHeaderView()
-
             return header }
         else {
-            return nil
+            return UIView(frame: zeroFrame)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        if section == 0 {
+            return 1 }
+        else {
+            return posts.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:
-        PostTableViewCell.identifier, for: indexPath) as!  PostTableViewCell
-        cell.setupSell(post: posts[indexPath.row])
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier:
+                                                        PhotosTableViewCell.identifier, for: indexPath) as!  PhotosTableViewCell
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier:
+                                                        PostTableViewCell.identifier, for: indexPath) as!  PostTableViewCell
+            cell.setupSell(post: posts[indexPath.row])
+            return cell
+        }
     }
-    
+
 
 }
