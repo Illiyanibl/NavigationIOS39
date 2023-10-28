@@ -15,7 +15,7 @@ final class PhotosTableViewCell: UITableViewCell {
 
     private func createPhoto() -> UIImageView {
         lazy var  photo: UIImageView = {
-            var view = UIImageView()
+            let view = UIImageView()
             view.contentMode = .scaleAspectFill
             view.layer.masksToBounds = true
             view.backgroundColor = .red
@@ -44,6 +44,7 @@ final class PhotosTableViewCell: UITableViewCell {
     private let title: UILabel = {
         let label = UILabel()
         label.text = "Photos"
+        label.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.bold)
         return label
     }()
 
