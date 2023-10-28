@@ -97,9 +97,6 @@ class PostTableViewCell: UITableViewCell {
             likesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             likesLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
 
-
-
-
         ])
 
     }
