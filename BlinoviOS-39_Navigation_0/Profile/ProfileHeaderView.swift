@@ -6,13 +6,14 @@
 //
 
 import UIKit
+
 class ProfileHeaderView: UIView {
-
+    
     var avatarSize: CGFloat  = 120
-
+    var avatarTapCallBack: (() -> Void)?
+    
     lazy var avatarView: UIImageView = {
         let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = avatarSize  / 2
         image.image = UIImage(named: "avatar")
         image.layer.masksToBounds = true
@@ -20,15 +21,22 @@ class ProfileHeaderView: UIView {
         image.layer.borderColor = UIColor.white.cgColor
         return image
     }()
-
+    
+    lazy var tapView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground
+        view.layer.cornerRadius = avatarSize  / 2
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
     lazy var nameLabel: UILabel = {
         let label =  UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.text = "View point"
         return label
     }()
-
+    
     lazy var statusLabel: UILabel = {
         let label =  UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,31 +75,41 @@ class ProfileHeaderView: UIView {
         textField.addTarget(nil, action: #selector(statusTextChanged), for: .editingChanged)
         return textField
     }()
-
+    
     private var statusText: String = ""
-
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         setupView()
         setupConstraints()
-
+        setupGesture()
     }
+    
     private func setupView(){
         self.backgroundColor = .lightGray
-        self.addSubviews([avatarView, nameLabel, showStatusButton, statusTextField, statusLabel])
-
+        self.addSubviews([tapView, nameLabel, showStatusButton, statusTextField, statusLabel])
+        tapView.addSubviews([avatarView])
     }
+    
+    private func setupGesture(){
+        let tapAvatarView = UITapGestureRecognizer(target: self, action: #selector(tapAvatarView))
+        tapView.addGestureRecognizer(tapAvatarView)
+    }
+    
+    @objc func tapAvatarView(){
+        avatarTapCallBack?()
+    }
+    
     @objc func statusTextChanged(){
         statusText = statusTextField.text ?? ""
     }
-
+    
     @objc func actionShowStatusButton(){
         print(statusText)
         statusLabel.text = statusText
         statusLabel.textColor = .black
-
     }
-
+    
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             
@@ -99,31 +117,36 @@ class ProfileHeaderView: UIView {
             avatarView.widthAnchor.constraint(equalToConstant: avatarSize),
             avatarView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             avatarView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-
+            
+            tapView.leadingAnchor.constraint(equalTo: avatarView.leadingAnchor),
+            tapView.trailingAnchor.constraint(equalTo: avatarView.trailingAnchor),
+            tapView.topAnchor.constraint(equalTo: avatarView.topAnchor),
+            tapView.bottomAnchor.constraint(equalTo: avatarView.bottomAnchor),
+            
             nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 27),
             nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             nameLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 27),
-
+            
             showStatusButton.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 16),
             showStatusButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             showStatusButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             showStatusButton.heightAnchor.constraint(equalToConstant: 50),
             showStatusButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-
+            
             statusTextField.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             statusTextField.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             statusTextField.bottomAnchor.constraint(equalTo: showStatusButton.topAnchor, constant: -34),
             statusTextField.heightAnchor.constraint(equalToConstant: 40),
-
+            
             statusLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
             statusLabel.centerXAnchor.constraint(equalTo: statusTextField.centerXAnchor),
-
+            
         ])
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-
+        
     }
-
+    
 }

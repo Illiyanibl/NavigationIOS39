@@ -68,7 +68,13 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.identifier, for: indexPath) as! PhotosCollectionViewCell
         cell.setupCell(photo: photoSource[indexPath.item])
+        let tap = UITapGestureRecognizer(target: self, action: #selector(test))
+        cell.photoView.addGestureRecognizer(tap)
         return cell
+    }
+    @objc func test(){
+        print("test")
+
     }
 
 
