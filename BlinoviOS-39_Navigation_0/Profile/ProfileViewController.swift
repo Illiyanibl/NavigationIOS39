@@ -113,7 +113,7 @@ final class ProfileViewController: UIViewController {
         let animator = UIViewPropertyAnimator(duration: 0.5, curve: .linear){
             self.avatar.frame = CGRect(x: 6, y: 6, width: self.bgAvatar.frame.width - 12, height: self.bgAvatar.frame.width - 12)
             self.avatar.center = CGPoint(x: finalCenter.x, y: finalCenter.y)
-            self.avatar.layer.cornerRadius = 2
+            self.avatar.layer.cornerRadius = 0
             self.bgAvatar.alpha = 0.5
         }
 
