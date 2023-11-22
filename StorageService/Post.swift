@@ -5,17 +5,23 @@
 //  Created by Illya Blinov on 1.10.23.
 //
 
-import Foundation
-struct Post {
-    var title: String = "News"
-    var text: String = "Some Text"
-    var author: String
-    var description: String
-    var image: String
-    var likes: Int = 0
-    var views: Int = 0
-    
-    static func createPost() -> [Post] {
+//import Foundation
+public struct Post {
+    public var title: String
+    public var text: String
+    public var author: String
+    public var description: String
+    public var image: String
+    public var likes: Int = 0
+    public var views: Int = 0
+    public init(title: String = "Nes", text: String = "Some Text" , author: String, description: String, image: String) {
+        self.title = title
+        self.text = text
+        self.author = author
+        self.description = description
+        self.image = image
+    }
+   public static func createPost() -> [Post] {
         let posts = [
             Post(author: "Вадим Макаренко",
                  description: "Владельцы новых Apple Watch жалуются на мерцающие экраны. Такое уже было",
