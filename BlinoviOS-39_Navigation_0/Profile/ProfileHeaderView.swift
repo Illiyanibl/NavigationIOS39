@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileHeaderView: UIView {
     
@@ -81,7 +82,7 @@ class ProfileHeaderView: UIView {
     override init(frame: CGRect) {
         super .init(frame: frame)
         setupView()
-        setupConstraints()
+        setupSnepKitConstraint()
         setupGesture()
     }
     
@@ -109,39 +110,44 @@ class ProfileHeaderView: UIView {
         statusLabel.text = statusText
         statusLabel.textColor = .black
     }
-    
-    private func setupConstraints(){
-        NSLayoutConstraint.activate([
-            
-            avatarView.heightAnchor.constraint(equalToConstant: avatarSize),
-            avatarView.widthAnchor.constraint(equalToConstant: avatarSize),
-            avatarView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            avatarView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            
-            tapView.leadingAnchor.constraint(equalTo: avatarView.leadingAnchor),
-            tapView.trailingAnchor.constraint(equalTo: avatarView.trailingAnchor),
-            tapView.topAnchor.constraint(equalTo: avatarView.topAnchor),
-            tapView.bottomAnchor.constraint(equalTo: avatarView.bottomAnchor),
-            
-            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 27),
-            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            nameLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 27),
-            
-            showStatusButton.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 16),
-            showStatusButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            showStatusButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            showStatusButton.heightAnchor.constraint(equalToConstant: 50),
-            showStatusButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-            
-            statusTextField.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            statusTextField.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-            statusTextField.bottomAnchor.constraint(equalTo: showStatusButton.topAnchor, constant: -34),
-            statusTextField.heightAnchor.constraint(equalToConstant: 40),
-            
-            statusLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
-            statusLabel.centerXAnchor.constraint(equalTo: statusTextField.centerXAnchor),
-            
-        ])
+
+    private func setupSnepKitConstraint(){
+        avatarView.snp.makeConstraints{ maker in
+            maker.leading.equalTo(self).inset(16)
+            maker.top.equalTo(self).inset(16)
+            maker.height.equalTo(avatarSize)
+            maker.width.equalTo(avatarSize)
+        }
+        tapView.snp.makeConstraints{ maker in
+            maker.leading.equalTo(avatarView)
+            maker.trailing.equalTo(avatarView)
+            maker.top.equalTo(avatarView)
+            maker.bottom.equalTo(avatarView)
+        }
+        nameLabel.snp.makeConstraints{ maker in
+            maker.top.equalTo(self).inset(27)
+            maker.trailing.equalTo(self).inset(16)
+            maker.leading.equalTo(avatarView.snp_trailingMargin).inset(-27)
+        }
+        showStatusButton.snp.makeConstraints{ maker in
+            maker.top.equalTo(avatarView.snp_bottomMargin).inset(-16)
+            maker.leading.equalTo(self).inset(16)
+            maker.trailing.equalTo(self).inset(16)
+            maker.height.equalTo(50)
+            maker.bottom.equalTo(self).inset(16)
+        }
+        statusTextField.snp.makeConstraints{ maker in
+            maker.leading.equalTo(nameLabel)
+            maker.trailing.equalTo(nameLabel)
+            maker.bottom.equalTo(showStatusButton.snp_topMargin).inset(-34)
+            maker.height.equalTo(40)
+        }
+        statusLabel.snp.makeConstraints{ maker in
+            maker.top.equalTo(nameLabel.snp_bottomMargin).inset(-8)
+            maker.centerX.equalTo(statusTextField)
+        }
+
+
     }
     
     required init?(coder: NSCoder) {

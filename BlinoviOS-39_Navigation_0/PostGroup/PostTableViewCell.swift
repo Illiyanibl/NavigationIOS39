@@ -7,8 +7,10 @@
 
 import UIKit
 import StorageService
+import iOSIntPackage
 
 class PostTableViewCell: UITableViewCell {
+    let randomFilter: [ColorFilter] = [.posterize, .colorInvert, .transfer, .noir, .tonal, .process, .chrome, .fade, .bloom(intensity: 2.0), .crystallize(radius: 4.0), .motionBlur(radius: 2.0), .sepia(intensity: 0.5)]
     lazy var authorLabel: UILabel = {
         let label = UILabel()
         return label
@@ -61,10 +63,24 @@ class PostTableViewCell: UITableViewCell {
         authorLabel.text = nil
     }
   */
+    func setupFilter(post: Post){
+        let imageIndex = Int.random(in: 0..<randomFilter.count)
+        guard imageIndex < randomFilter.count else {
+            imageCell.image = UIImage(named: post.image)
+            return
+        }
+
+     let imageProcessor = ImageProcessor()
+        let  handler: (UIImage?) -> Void = { image in
+            self.imageCell.image = image
+        }
+
+        imageProcessor.processImage(sourceImage: UIImage(named: post.image) ?? UIImage() , filter: randomFilter[imageIndex], completion: handler)
+    }
 
     func setupSell(post: Post){
         authorLabel.text = post.author
-        imageCell.image = UIImage(named: post.image)
+     //   imageCell.image = UIImage(named: post.image)
         descriptionLabel.text = post.description
         likesLabel.text = "Likes: " + String(post.likes)
         viewsLabel.text = "Views: " + String(post.views)

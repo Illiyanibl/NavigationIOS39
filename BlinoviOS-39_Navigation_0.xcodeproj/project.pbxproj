@@ -30,7 +30,9 @@
 		51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD72AC2C43200AF91DC /* FeedViewController.swift */; };
 		51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */; };
 		51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEEC622ADAED760036F2B2 /* LogInViewController.swift */; };
+		51DADB8B2B1331AF0027C3EA /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 51DADB8A2B1331AF0027C3EA /* iOSIntPackage */; };
 		51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD2B922AED023A004A7D1A /* PhotoModel.swift */; };
+		8EB6353AD6FEB61F10BBBD49 /* Pods_BlinoviOS_39_Navigation_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04FF98308F369875F321329 /* Pods_BlinoviOS_39_Navigation_0.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,9 @@
 		51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		51CEEC622ADAED760036F2B2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		51DD2B922AED023A004A7D1A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		7C06F530ED00DC8B577AAA8D /* Pods-BlinoviOS-39_Navigation_0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlinoviOS-39_Navigation_0.release.xcconfig"; path = "Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0.release.xcconfig"; sourceTree = "<group>"; };
+		876BA5656DF5A04E4214A0F1 /* Pods-BlinoviOS-39_Navigation_0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlinoviOS-39_Navigation_0.debug.xcconfig"; path = "Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0.debug.xcconfig"; sourceTree = "<group>"; };
+		D04FF98308F369875F321329 /* Pods_BlinoviOS_39_Navigation_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlinoviOS_39_Navigation_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51DADB8B2B1331AF0027C3EA /* iOSIntPackage in Frameworks */,
 				519C27982B0D16A000E1B3AC /* StorageService.framework in Frameworks */,
+				8EB6353AD6FEB61F10BBBD49 /* Pods_BlinoviOS_39_Navigation_0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +191,7 @@
 		519C27942B0D161B00E1B3AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D04FF98308F369875F321329 /* Pods_BlinoviOS_39_Navigation_0.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 				519C27842B0D15C300E1B3AC /* StorageServiceTests */,
 				51B05CC12AC2BCAF00AF91DC /* Products */,
 				519C27942B0D161B00E1B3AC /* Frameworks */,
+				83E6B03D752E4F56C7197A84 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +235,15 @@
 				516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */,
 			);
 			path = "BlinoviOS-39_Navigation_0";
+			sourceTree = "<group>";
+		};
+		83E6B03D752E4F56C7197A84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				876BA5656DF5A04E4214A0F1 /* Pods-BlinoviOS-39_Navigation_0.debug.xcconfig */,
+				7C06F530ED00DC8B577AAA8D /* Pods-BlinoviOS-39_Navigation_0.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,10 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51B05CD42AC2BCB000AF91DC /* Build configuration list for PBXNativeTarget "BlinoviOS-39_Navigation_0" */;
 			buildPhases = (
+				9C2A0C03DE6E47769E3C4EE6 /* [CP] Check Pods Manifest.lock */,
 				51B05CBC2AC2BCAF00AF91DC /* Sources */,
 				51B05CBD2AC2BCAF00AF91DC /* Frameworks */,
 				51B05CBE2AC2BCAF00AF91DC /* Resources */,
 				519C279C2B0D16A000E1B3AC /* Embed Frameworks */,
+				3AA7140425F64B53C5C3380E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +315,9 @@
 				519C279B2B0D16A000E1B3AC /* PBXTargetDependency */,
 			);
 			name = "BlinoviOS-39_Navigation_0";
+			packageProductDependencies = (
+				51DADB8A2B1331AF0027C3EA /* iOSIntPackage */,
+			);
 			productName = "BlinoviOS-39_Navigation_0";
 			productReference = 51B05CC02AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0.app */;
 			productType = "com.apple.product-type.application";
@@ -330,6 +353,9 @@
 				Base,
 			);
 			mainGroup = 51B05CB72AC2BCAF00AF91DC;
+			packageReferences = (
+				51DADB892B1331AF0027C3EA /* XCRemoteSwiftPackageReference "iOSIntPackage" */,
+			);
 			productRefGroup = 51B05CC12AC2BCAF00AF91DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,6 +392,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AA7140425F64B53C5C3380E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C2A0C03DE6E47769E3C4EE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlinoviOS-39_Navigation_0-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		519C27712B0D15C200E1B3AC /* Sources */ = {
@@ -600,7 +668,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -661,7 +729,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -682,6 +750,7 @@
 		};
 		51B05CD52AC2BCB000AF91DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 876BA5656DF5A04E4214A0F1 /* Pods-BlinoviOS-39_Navigation_0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -710,6 +779,7 @@
 		};
 		51B05CD62AC2BCB000AF91DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C06F530ED00DC8B577AAA8D /* Pods-BlinoviOS-39_Navigation_0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -776,6 +846,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51DADB892B1331AF0027C3EA /* XCRemoteSwiftPackageReference "iOSIntPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TrueMax/iOSIntPackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51DADB8A2B1331AF0027C3EA /* iOSIntPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51DADB892B1331AF0027C3EA /* XCRemoteSwiftPackageReference "iOSIntPackage" */;
+			productName = iOSIntPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51B05CB82AC2BCAF00AF91DC /* Project object */;
 }
