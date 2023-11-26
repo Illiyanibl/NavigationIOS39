@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import StorageService
 class FeedViewController: UIViewController {
 
     let showPostButtonCornerRadius: CGFloat = 20
     lazy var showPostButton: UIButton = {
         let button = UIButton()
         button.setTitle("Post", for: .normal)
+
         button.setTitleColor(.systemRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
@@ -21,7 +23,7 @@ class FeedViewController: UIViewController {
     }()
 
     @objc func showPostButtonPressed() {
-        let post = Post(title: "Заголовок поста", text: "Текст поста")
+        let post = Post(title: "Заголовок поста", text: "Текст поста", author: "", description: "", image: "")
         let postViewController = PostViewController()
         postViewController.getPost = post
         navigationController?.pushViewController(postViewController, animated: true)

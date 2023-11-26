@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		512220B72AC95D7000CDCD66 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220B62AC95D7000CDCD66 /* Post.swift */; };
+		5101DB2D2AE03B7F00500802 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5101DB2C2AE03B7F00500802 /* PostTableViewCell.swift */; };
 		512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220B82AC95E5E00CDCD66 /* PostViewController.swift */; };
 		512220BB2AC96AC400CDCD66 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220BA2AC96AC400CDCD66 /* InfoViewController.swift */; };
+		512220BE2ACBD32700CDCD66 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220BD2ACBD32700CDCD66 /* ProfileHeaderView.swift */; };
+		516AF8C02AD5417B00AE1597 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */; };
+		518F344C2AE828F9006EA7E8 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518F344B2AE828F9006EA7E8 /* PhotosTableViewCell.swift */; };
+		518F344E2AE82A66006EA7E8 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518F344D2AE82A66006EA7E8 /* PhotosViewController.swift */; };
+		518F34502AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518F344F2AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift */; };
+		519C27792B0D15C300E1B3AC /* StorageService.docc in Sources */ = {isa = PBXBuildFile; fileRef = 519C27782B0D15C200E1B3AC /* StorageService.docc */; };
+		519C277F2B0D15C300E1B3AC /* StorageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 519C27752B0D15C200E1B3AC /* StorageService.framework */; };
+		519C27862B0D15C300E1B3AC /* StorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C27852B0D15C300E1B3AC /* StorageServiceTests.swift */; };
+		519C27872B0D15C300E1B3AC /* StorageService.h in Headers */ = {isa = PBXBuildFile; fileRef = 519C27772B0D15C200E1B3AC /* StorageService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		519C27932B0D15D400E1B3AC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512220B62AC95D7000CDCD66 /* Post.swift */; };
+		519C27982B0D16A000E1B3AC /* StorageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 519C27752B0D15C200E1B3AC /* StorageService.framework */; };
+		519C27992B0D16A000E1B3AC /* StorageService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 519C27752B0D15C200E1B3AC /* StorageService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51B05CC42AC2BCAF00AF91DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */; };
 		51B05CC62AC2BCAF00AF91DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */; };
 		51B05CC82AC2BCAF00AF91DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC72AC2BCAF00AF91DC /* ViewController.swift */; };
@@ -17,12 +29,72 @@
 		51B05CD02AC2BCB000AF91DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */; };
 		51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD72AC2C43200AF91DC /* FeedViewController.swift */; };
 		51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */; };
+		51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEEC622ADAED760036F2B2 /* LogInViewController.swift */; };
+		51DADB8B2B1331AF0027C3EA /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 51DADB8A2B1331AF0027C3EA /* iOSIntPackage */; };
+		51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD2B922AED023A004A7D1A /* PhotoModel.swift */; };
+		8EB6353AD6FEB61F10BBBD49 /* Pods_BlinoviOS_39_Navigation_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04FF98308F369875F321329 /* Pods_BlinoviOS_39_Navigation_0.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		519C27802B0D15C300E1B3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51B05CB82AC2BCAF00AF91DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 519C27742B0D15C200E1B3AC;
+			remoteInfo = StorageService;
+		};
+		519C27822B0D15C300E1B3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51B05CB82AC2BCAF00AF91DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51B05CBF2AC2BCAF00AF91DC;
+			remoteInfo = "BlinoviOS-39_Navigation_0";
+		};
+		519C27962B0D161B00E1B3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51B05CB82AC2BCAF00AF91DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 519C27742B0D15C200E1B3AC;
+			remoteInfo = StorageService;
+		};
+		519C279A2B0D16A000E1B3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51B05CB82AC2BCAF00AF91DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 519C27742B0D15C200E1B3AC;
+			remoteInfo = StorageService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		519C279C2B0D16A000E1B3AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				519C27992B0D16A000E1B3AC /* StorageService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5101DB2C2AE03B7F00500802 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		512220B62AC95D7000CDCD66 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		512220B82AC95E5E00CDCD66 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		512220BA2AC96AC400CDCD66 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		512220BD2ACBD32700CDCD66 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		518F344B2AE828F9006EA7E8 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		518F344D2AE82A66006EA7E8 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		518F344F2AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		519C27752B0D15C200E1B3AC /* StorageService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StorageService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		519C27772B0D15C200E1B3AC /* StorageService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
+		519C27782B0D15C200E1B3AC /* StorageService.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = StorageService.docc; sourceTree = "<group>"; };
+		519C277E2B0D15C300E1B3AC /* StorageServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorageServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		519C27852B0D15C300E1B3AC /* StorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceTests.swift; sourceTree = "<group>"; };
 		51B05CC02AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinoviOS-39_Navigation_0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,24 +104,107 @@
 		51B05CD12AC2BCB000AF91DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51B05CD72AC2C43200AF91DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		51CEEC622ADAED760036F2B2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		51DD2B922AED023A004A7D1A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		7C06F530ED00DC8B577AAA8D /* Pods-BlinoviOS-39_Navigation_0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlinoviOS-39_Navigation_0.release.xcconfig"; path = "Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0.release.xcconfig"; sourceTree = "<group>"; };
+		876BA5656DF5A04E4214A0F1 /* Pods-BlinoviOS-39_Navigation_0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlinoviOS-39_Navigation_0.debug.xcconfig"; path = "Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0.debug.xcconfig"; sourceTree = "<group>"; };
+		D04FF98308F369875F321329 /* Pods_BlinoviOS_39_Navigation_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlinoviOS_39_Navigation_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		51B05CBD2AC2BCAF00AF91DC /* Frameworks */ = {
+		519C27722B0D15C200E1B3AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		519C277B2B0D15C300E1B3AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519C277F2B0D15C300E1B3AC /* StorageService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51B05CBD2AC2BCAF00AF91DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51DADB8B2B1331AF0027C3EA /* iOSIntPackage in Frameworks */,
+				519C27982B0D16A000E1B3AC /* StorageService.framework in Frameworks */,
+				8EB6353AD6FEB61F10BBBD49 /* Pods_BlinoviOS_39_Navigation_0.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5101DB2B2AE031A300500802 /* PostGroup */ = {
+			isa = PBXGroup;
+			children = (
+				512220B82AC95E5E00CDCD66 /* PostViewController.swift */,
+				5101DB2C2AE03B7F00500802 /* PostTableViewCell.swift */,
+			);
+			path = PostGroup;
+			sourceTree = "<group>";
+		};
+		512220BC2ACBD2E800CDCD66 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				512220BD2ACBD32700CDCD66 /* ProfileHeaderView.swift */,
+				51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */,
+				51CEEC622ADAED760036F2B2 /* LogInViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		518F344A2AE828B5006EA7E8 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				518F344B2AE828F9006EA7E8 /* PhotosTableViewCell.swift */,
+				518F344D2AE82A66006EA7E8 /* PhotosViewController.swift */,
+				518F344F2AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift */,
+				51DD2B922AED023A004A7D1A /* PhotoModel.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		519C27762B0D15C200E1B3AC /* StorageService */ = {
+			isa = PBXGroup;
+			children = (
+				512220B62AC95D7000CDCD66 /* Post.swift */,
+				519C27772B0D15C200E1B3AC /* StorageService.h */,
+				519C27782B0D15C200E1B3AC /* StorageService.docc */,
+			);
+			path = StorageService;
+			sourceTree = "<group>";
+		};
+		519C27842B0D15C300E1B3AC /* StorageServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				519C27852B0D15C300E1B3AC /* StorageServiceTests.swift */,
+			);
+			path = StorageServiceTests;
+			sourceTree = "<group>";
+		};
+		519C27942B0D161B00E1B3AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D04FF98308F369875F321329 /* Pods_BlinoviOS_39_Navigation_0.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		51B05CB72AC2BCAF00AF91DC = {
 			isa = PBXGroup;
 			children = (
 				51B05CC22AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */,
+				519C27762B0D15C200E1B3AC /* StorageService */,
+				519C27842B0D15C300E1B3AC /* StorageServiceTests */,
 				51B05CC12AC2BCAF00AF91DC /* Products */,
+				519C27942B0D161B00E1B3AC /* Frameworks */,
+				83E6B03D752E4F56C7197A84 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				51B05CC02AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0.app */,
+				519C27752B0D15C200E1B3AC /* StorageService.framework */,
+				519C277E2B0D15C300E1B3AC /* StorageServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,37 +221,103 @@
 		51B05CC22AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */ = {
 			isa = PBXGroup;
 			children = (
-				51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */,
 				51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */,
+				51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */,
 				51B05CC72AC2BCAF00AF91DC /* ViewController.swift */,
 				51B05CD72AC2C43200AF91DC /* FeedViewController.swift */,
-				51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */,
 				51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */,
 				51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */,
 				51B05CD12AC2BCB000AF91DC /* Info.plist */,
-				512220B62AC95D7000CDCD66 /* Post.swift */,
-				512220B82AC95E5E00CDCD66 /* PostViewController.swift */,
+				518F344A2AE828B5006EA7E8 /* Photos */,
+				5101DB2B2AE031A300500802 /* PostGroup */,
 				512220BA2AC96AC400CDCD66 /* InfoViewController.swift */,
+				512220BC2ACBD2E800CDCD66 /* Profile */,
+				516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */,
 			);
 			path = "BlinoviOS-39_Navigation_0";
 			sourceTree = "<group>";
 		};
+		83E6B03D752E4F56C7197A84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				876BA5656DF5A04E4214A0F1 /* Pods-BlinoviOS-39_Navigation_0.debug.xcconfig */,
+				7C06F530ED00DC8B577AAA8D /* Pods-BlinoviOS-39_Navigation_0.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		519C27702B0D15C200E1B3AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519C27872B0D15C300E1B3AC /* StorageService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		51B05CBF2AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */ = {
+		519C27742B0D15C200E1B3AC /* StorageService */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 51B05CD42AC2BCB000AF91DC /* Build configuration list for PBXNativeTarget "BlinoviOS-39_Navigation_0" */;
+			buildConfigurationList = 519C27912B0D15C300E1B3AC /* Build configuration list for PBXNativeTarget "StorageService" */;
 			buildPhases = (
-				51B05CBC2AC2BCAF00AF91DC /* Sources */,
-				51B05CBD2AC2BCAF00AF91DC /* Frameworks */,
-				51B05CBE2AC2BCAF00AF91DC /* Resources */,
+				519C27702B0D15C200E1B3AC /* Headers */,
+				519C27712B0D15C200E1B3AC /* Sources */,
+				519C27722B0D15C200E1B3AC /* Frameworks */,
+				519C27732B0D15C200E1B3AC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = StorageService;
+			productName = StorageService;
+			productReference = 519C27752B0D15C200E1B3AC /* StorageService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		519C277D2B0D15C300E1B3AC /* StorageServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 519C27922B0D15C300E1B3AC /* Build configuration list for PBXNativeTarget "StorageServiceTests" */;
+			buildPhases = (
+				519C277A2B0D15C300E1B3AC /* Sources */,
+				519C277B2B0D15C300E1B3AC /* Frameworks */,
+				519C277C2B0D15C300E1B3AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				519C27812B0D15C300E1B3AC /* PBXTargetDependency */,
+				519C27832B0D15C300E1B3AC /* PBXTargetDependency */,
+			);
+			name = StorageServiceTests;
+			productName = StorageServiceTests;
+			productReference = 519C277E2B0D15C300E1B3AC /* StorageServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		51B05CBF2AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51B05CD42AC2BCB000AF91DC /* Build configuration list for PBXNativeTarget "BlinoviOS-39_Navigation_0" */;
+			buildPhases = (
+				9C2A0C03DE6E47769E3C4EE6 /* [CP] Check Pods Manifest.lock */,
+				51B05CBC2AC2BCAF00AF91DC /* Sources */,
+				51B05CBD2AC2BCAF00AF91DC /* Frameworks */,
+				51B05CBE2AC2BCAF00AF91DC /* Resources */,
+				519C279C2B0D16A000E1B3AC /* Embed Frameworks */,
+				3AA7140425F64B53C5C3380E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				519C27972B0D161B00E1B3AC /* PBXTargetDependency */,
+				519C279B2B0D16A000E1B3AC /* PBXTargetDependency */,
+			);
 			name = "BlinoviOS-39_Navigation_0";
+			packageProductDependencies = (
+				51DADB8A2B1331AF0027C3EA /* iOSIntPackage */,
+			);
 			productName = "BlinoviOS-39_Navigation_0";
 			productReference = 51B05CC02AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0.app */;
 			productType = "com.apple.product-type.application";
@@ -106,9 +329,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					519C27742B0D15C200E1B3AC = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					519C277D2B0D15C300E1B3AC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 51B05CBF2AC2BCAF00AF91DC;
+					};
 					51B05CBF2AC2BCAF00AF91DC = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -123,16 +353,35 @@
 				Base,
 			);
 			mainGroup = 51B05CB72AC2BCAF00AF91DC;
+			packageReferences = (
+				51DADB892B1331AF0027C3EA /* XCRemoteSwiftPackageReference "iOSIntPackage" */,
+			);
 			productRefGroup = 51B05CC12AC2BCAF00AF91DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				51B05CBF2AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */,
+				519C27742B0D15C200E1B3AC /* StorageService */,
+				519C277D2B0D15C300E1B3AC /* StorageServiceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		519C27732B0D15C200E1B3AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		519C277C2B0D15C300E1B3AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51B05CBE2AC2BCAF00AF91DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,23 +393,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AA7140425F64B53C5C3380E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlinoviOS-39_Navigation_0/Pods-BlinoviOS-39_Navigation_0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C2A0C03DE6E47769E3C4EE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlinoviOS-39_Navigation_0-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		519C27712B0D15C200E1B3AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519C27792B0D15C300E1B3AC /* StorageService.docc in Sources */,
+				519C27932B0D15D400E1B3AC /* Post.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		519C277A2B0D15C300E1B3AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519C27862B0D15C300E1B3AC /* StorageServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51B05CBC2AC2BCAF00AF91DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516AF8C02AD5417B00AE1597 /* UIViewExtension.swift in Sources */,
 				51B05CC82AC2BCAF00AF91DC /* ViewController.swift in Sources */,
+				51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */,
 				51B05CC42AC2BCAF00AF91DC /* AppDelegate.swift in Sources */,
 				512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */,
 				51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */,
-				512220B72AC95D7000CDCD66 /* Post.swift in Sources */,
+				51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */,
+				512220BE2ACBD32700CDCD66 /* ProfileHeaderView.swift in Sources */,
 				51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */,
+				518F344C2AE828F9006EA7E8 /* PhotosTableViewCell.swift in Sources */,
 				512220BB2AC96AC400CDCD66 /* InfoViewController.swift in Sources */,
+				518F34502AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift in Sources */,
+				518F344E2AE82A66006EA7E8 /* PhotosViewController.swift in Sources */,
 				51B05CC62AC2BCAF00AF91DC /* SceneDelegate.swift in Sources */,
+				5101DB2D2AE03B7F00500802 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		519C27812B0D15C300E1B3AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 519C27742B0D15C200E1B3AC /* StorageService */;
+			targetProxy = 519C27802B0D15C300E1B3AC /* PBXContainerItemProxy */;
+		};
+		519C27832B0D15C300E1B3AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51B05CBF2AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */;
+			targetProxy = 519C27822B0D15C300E1B3AC /* PBXContainerItemProxy */;
+		};
+		519C27972B0D161B00E1B3AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 519C27742B0D15C200E1B3AC /* StorageService */;
+			targetProxy = 519C27962B0D161B00E1B3AC /* PBXContainerItemProxy */;
+		};
+		519C279B2B0D16A000E1B3AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 519C27742B0D15C200E1B3AC /* StorageService */;
+			targetProxy = 519C279A2B0D16A000E1B3AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */ = {
@@ -174,6 +512,126 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		519C278D2B0D15C300E1B3AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L24ACGSC43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = ecorp.red.StorageService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		519C278E2B0D15C300E1B3AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L24ACGSC43;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = ecorp.red.StorageService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		519C278F2B0D15C300E1B3AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L24ACGSC43;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ecorp.red.StorageServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlinoviOS-39_Navigation_0.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BlinoviOS-39_Navigation_0";
+			};
+			name = Debug;
+		};
+		519C27902B0D15C300E1B3AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L24ACGSC43;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ecorp.red.StorageServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlinoviOS-39_Navigation_0.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BlinoviOS-39_Navigation_0";
+			};
+			name = Release;
+		};
 		51B05CD22AC2BCB000AF91DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -210,6 +668,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -270,6 +729,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -290,6 +750,7 @@
 		};
 		51B05CD52AC2BCB000AF91DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 876BA5656DF5A04E4214A0F1 /* Pods-BlinoviOS-39_Navigation_0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +779,7 @@
 		};
 		51B05CD62AC2BCB000AF91DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C06F530ED00DC8B577AAA8D /* Pods-BlinoviOS-39_Navigation_0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -347,6 +809,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		519C27912B0D15C300E1B3AC /* Build configuration list for PBXNativeTarget "StorageService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				519C278D2B0D15C300E1B3AC /* Debug */,
+				519C278E2B0D15C300E1B3AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		519C27922B0D15C300E1B3AC /* Build configuration list for PBXNativeTarget "StorageServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				519C278F2B0D15C300E1B3AC /* Debug */,
+				519C27902B0D15C300E1B3AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51B05CBB2AC2BCAF00AF91DC /* Build configuration list for PBXProject "BlinoviOS-39_Navigation_0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -366,6 +846,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51DADB892B1331AF0027C3EA /* XCRemoteSwiftPackageReference "iOSIntPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TrueMax/iOSIntPackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51DADB8A2B1331AF0027C3EA /* iOSIntPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51DADB892B1331AF0027C3EA /* XCRemoteSwiftPackageReference "iOSIntPackage" */;
+			productName = iOSIntPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51B05CB82AC2BCAF00AF91DC /* Project object */;
 }
