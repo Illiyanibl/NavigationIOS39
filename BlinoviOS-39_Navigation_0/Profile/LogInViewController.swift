@@ -9,6 +9,8 @@ import UIKit
 
 final class LogInViewController: UIViewController {
 
+    var currentUserService: UserService?
+
     private let colorSet = UIColor(hex: "#d3d3d3")
 
 
@@ -141,11 +143,29 @@ final class LogInViewController: UIViewController {
     }
 
     @objc private func pressLoginButton(){
+#if DEBUG
+        currentUserService = TestUserService()
+#else
+        currentUserService = CurrentUserService()
+#endif
+        let authorizedUser: User? = currentUserService?.getUser(login: loginText.text ?? "")
+        guard let authorizedUser else {
+            authorisationLoginError()
+            return
+        }
         let profileViewController = ProfileViewController()
+        profileViewController.getUser(user: authorizedUser)
         loginButton.isEnabled = false
         navigationController?.pushViewController(profileViewController, animated: true)
 
     }
+    private func authorisationLoginError() {
+        let alert = UIAlertController(title: "Login is wrong", message: "\nВнимание!\n\nLogin не корректен!", preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: "Ok", style: .default) { _ in }
+        alert.addAction(actionOk)
+        present(alert, animated: true)
+    }
+
     @objc private func allEventsLoginButton(){
         setupLoginButton()
     }

@@ -30,6 +30,7 @@
 		51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD72AC2C43200AF91DC /* FeedViewController.swift */; };
 		51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */; };
 		51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEEC622ADAED760036F2B2 /* LogInViewController.swift */; };
+		51DADB8E2B13A3350027C3EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DADB8D2B13A3350027C3EA /* User.swift */; };
 		51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD2B922AED023A004A7D1A /* PhotoModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		51B05CD72AC2C43200AF91DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		51CEEC622ADAED760036F2B2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		51DADB8D2B13A3350027C3EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		51DD2B922AED023A004A7D1A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,8 +226,17 @@
 				512220BA2AC96AC400CDCD66 /* InfoViewController.swift */,
 				512220BC2ACBD2E800CDCD66 /* Profile */,
 				516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */,
+				51DADB8C2B13A2EC0027C3EA /* User */,
 			);
 			path = "BlinoviOS-39_Navigation_0";
+			sourceTree = "<group>";
+		};
+		51DADB8C2B13A2EC0027C3EA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				51DADB8D2B13A3350027C3EA /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 				51B05CC82AC2BCAF00AF91DC /* ViewController.swift in Sources */,
 				51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */,
 				51B05CC42AC2BCAF00AF91DC /* AppDelegate.swift in Sources */,
+				51DADB8E2B13A3350027C3EA /* User.swift in Sources */,
 				512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */,
 				51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */,
 				51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */,

@@ -13,6 +13,7 @@ final class ProfileViewController: UIViewController {
     let zeroFrame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
 
     private let posts = Post.createPost()
+    private var user: User?
     var profileHeaderView = ProfileHeaderView()
 
     lazy var  postTable: UITableView = {
@@ -49,16 +50,28 @@ final class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let user else {
+            navigationController?.pushViewController(LogInViewController(), animated: true)
+            return
+        }
+        setUser(user: user)
+        setupView()
+        setupConstraints()
+    }
+    private func setupView(){
         //view.backgroundColor = .lightGray
-        #if DEBUG
+#if DEBUG
         view.backgroundColor = .yellow
-        #else
+#else
         view.backgroundColor = .green
-        #endif
+#endif
         title = "Profile"
         view.addSubviews([postTable])
-        setupConstraints()
+
+    }
+
+    private func setUser(user: User){
+        profileHeaderView.setUser(user: user)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +83,10 @@ final class ProfileViewController: UIViewController {
 
     lazy var getAvatarFrame = CGRect.zero
     lazy var getAvatarCenter = CGPoint.zero
+
+    func getUser(user: User){
+        self.user = user
+    }
 
     func tapAvatar(avatarFrame: CGRect, avatarCenter:  CGPoint){
         view.addSubviews([bgAvatar,avatar, btCloseView])

@@ -37,12 +37,12 @@ class FeedViewController: UIViewController {
         view.addSubview(showPostButton)
         setupConstraints()
     }
-    
-        private func setupConstraints(){
-            NSLayoutConstraint.activate([
-                showPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-                showPostButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-                showPostButton.heightAnchor.constraint(equalToConstant: showPostButtonCornerRadius * 2),
-                showPostButton.widthAnchor.constraint(equalToConstant:  showPostButtonCornerRadius * 8)
-            ])}
-    }
+
+    private func setupConstraints(){
+        NSLayoutConstraint.activate([
+            showPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            showPostButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            showPostButton.heightAnchor.constraint(equalToConstant: showPostButtonCornerRadius * 2),
+            showPostButton.widthAnchor.constraint(equalToConstant:  showPostButtonCornerRadius * 8)
+        ])}
+}
