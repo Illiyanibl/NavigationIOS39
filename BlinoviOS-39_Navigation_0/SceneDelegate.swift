@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let feedViewController = FeedViewController()
         //let profileViewController = ProfileViewController()
         let loginViewController = LogInViewController()
+        loginViewController.loginDelegate = MyLoginFactory().makeLoginInspector()
         tabMainViewController.tabBar.barStyle = .default
         tabMainViewController.tabBar.backgroundColor = .white
         tabMainViewController.tabBar.tintColor = .systemRed

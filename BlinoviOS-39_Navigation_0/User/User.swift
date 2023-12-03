@@ -17,7 +17,7 @@ class User {
     var fullName: String
     var avatar: UIImage
     var status: String
-
+    
     init(login: String, fullName: String, avatar: UIImage, status: String) {
         self.login = login
         self.fullName = fullName
@@ -25,7 +25,7 @@ class User {
         self.status = status
     }
     static func newUser() -> User{
-        let user = User(login: "Admin", fullName: "Friendly interface", avatar: UIImage(named: "user") ?? UIImage(), status: "i'll be back")
+        let user = User(login: Checker.checker.login, fullName: "Friendly interface", avatar: UIImage(named: "user") ?? UIImage(), status: "i'll be back")
         return user
     }
     static func testUser() -> User{
