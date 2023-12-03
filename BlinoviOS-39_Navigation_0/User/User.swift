@@ -8,6 +8,7 @@
 import UIKit
 
 protocol UserService {
+    var user: User { get set }
     func getUser(login: String) -> User?
 }
 
@@ -33,26 +34,20 @@ class User {
     }
 }
 class TestUserService: UserService {
-    let user: User
+    var user: User
     init() {
         self.user = User.testUser()
     }
-    func getUser(login: String) -> User? {
-        guard user.login == login else { return nil}
-        return user
-    }
-
 }
 
 class CurrentUserService: UserService {
-    let user: User
+    var user: User
     init() {
         self.user = User.newUser()
     }
+}
+extension UserService {
     func getUser(login: String) -> User? {
-        guard user.login == login else { return nil}
-        return user
+        return user.login == login ? user : nil
     }
-
-
 }
