@@ -15,7 +15,11 @@ final class Checker{
     
     let login: String
     let password: String
-    static let checker = Checker(login: "Admin", password: "123")
+#if DEBUG
+    static let shared = Checker(login: TestUserService().user.login, password: "123")
+#else
+    static let shared = Checker(login: CurrentUserService().user.login, password: "123")
+#endif
     private init(login: String, password: String){
         self.login = login
         self.password = password

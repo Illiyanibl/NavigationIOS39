@@ -8,6 +8,6 @@
 import Foundation
 struct LoginInspector: LoginViewControllerDelegate {
     func check(login: String, password: String) -> Bool {
-        Checker.checker.check(login: login, password: password)
+        Checker.shared.check(login: login, password: password)
     }
 }

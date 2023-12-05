@@ -106,6 +106,12 @@ final class LogInViewController: UIViewController {
         view.addSubview(scrollView)
         setupLoginButton()
         scrollView.addSubview(contentView)
+#if DEBUG
+        loginText.text = TestUserService().user.login
+#else
+        loginText.text = CurrentUserService().user.login
+#endif
+        passwordText.text = "123"
         authorizationViewGroup.addArrangedSubviews([
             loginText,
             separatorView,
