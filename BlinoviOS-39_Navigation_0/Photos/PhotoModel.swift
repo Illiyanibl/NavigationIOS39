@@ -5,6 +5,8 @@
 //  Created by Illya Blinov on 28.10.23.
 //
 
+import UIKit
+
 struct PhotoModel {
     var photoName: String
     var isLocalPhoto: Bool = true
@@ -18,5 +20,10 @@ struct PhotoModel {
                                    "photo15", "photo16", "photo17", "photo18", "photo19", "photo20"]
         photoName.forEach() {photoList.append(PhotoModel(photoName: $0)) }
         return photoList
+    }
+    static func getImageFromModel(photoList: [PhotoModel]) -> [UIImage]?{
+        var photoCollection: [UIImage]? = []
+        photoList.forEach(){ photoCollection?.append(UIImage(named: $0.photoName) ?? UIImage())}
+        return photoCollection
     }
 }

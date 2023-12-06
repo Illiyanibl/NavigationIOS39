@@ -29,11 +29,15 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         contentView.addSubviews([photoView])
         
     }
-    func setupCell(photo: PhotoModel){
-        photoView.image = UIImage(named: photo.photoName)
-        
+//    func setupCell(photo: PhotoModel){
+ //       photoView.image = UIImage(named: photo.photoName)
+
+ //   }
+    func setupCell(photo: UIImage?) {
+        guard let photo = photo else { return}
+        photoView.image = photo
     }
-    
+
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             photoView.topAnchor.constraint(equalTo: contentView.topAnchor),
