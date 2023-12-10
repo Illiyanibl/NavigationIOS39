@@ -79,13 +79,13 @@ final class LogInViewController: UIViewController {
     }()
     
     private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        let button = CustomButton(title: "Log In", titleColor: .white)
         button.setBackgroundImage(UIImage(named: "bluePixel"), for: .normal)
-        button.setTitle("Log In", for: .normal)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        button.addTarget(nil, action: #selector(pressLoginButton), for: .touchUpInside)
+        button.action = { [weak self] in
+            guard let self = self else { return}
+            self.pressLoginButton()}
         button.addTarget(nil, action: #selector(allEventsLoginButton), for: .allEvents)
         return button
     }()
@@ -149,7 +149,7 @@ final class LogInViewController: UIViewController {
         scrollView.verticalScrollIndicatorInsets = .zero
     }
     
-    @objc private func pressLoginButton(){
+    private func pressLoginButton(){
         let authorizedUser = loginCheck()
         guard let authorizedUser else {
             authorisationLoginError()

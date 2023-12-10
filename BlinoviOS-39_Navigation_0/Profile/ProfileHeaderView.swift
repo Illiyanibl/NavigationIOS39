@@ -45,17 +45,15 @@ class ProfileHeaderView : UIView {
         return label
     }()
     lazy var showStatusButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemBlue
-        button.setTitle("Show status", for: .normal)
-        button.tintColor = .white
+        let button = CustomButton(title: "Show status", titleColor: .white, backgroundColor: .systemBlue)
+        button.action = { [weak self] in
+            guard let self = self else { return}
+            self.actionShowStatusButton()}
         button.layer.cornerRadius = 4
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.layer.shadowRadius = 4
         button.layer.shadowOpacity = 0.7
-        button.addTarget(nil, action: #selector(actionShowStatusButton), for: .touchUpInside)
         return button
     }()
     lazy var statusTextField: UITextField = {
@@ -109,7 +107,7 @@ class ProfileHeaderView : UIView {
         statusText = statusTextField.text ?? ""
     }
 
-    @objc func actionShowStatusButton(){
+    func actionShowStatusButton(){
         print(statusText)
         statusLabel.text = statusText
         statusLabel.textColor = .black
