@@ -18,14 +18,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
 
         let tabMainViewController = UITabBarController()
-        let feedViewController = FeedViewController()
-        let profileViewController = ProfileViewController()
+        let viewModel = FeedViewModel()
+        let feedViewController = FeedViewController(feedViewModel: viewModel)
+
+      //  let feedViewController = FeedViewController()
+        //let profileViewController = ProfileViewController()
+        let loginViewController = LogInViewController()
+        loginViewController.loginDelegate = MyLoginFactory().makeLoginInspector()
         tabMainViewController.tabBar.barStyle = .default
         tabMainViewController.tabBar.backgroundColor = .white
         tabMainViewController.tabBar.tintColor = .systemRed
         tabMainViewController.tabBar.unselectedItemTintColor = .systemGray3
 
-        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
+        let profileNavigationController = UINavigationController(rootViewController: loginViewController)
 
         let feedNavigationController = UINavigationController(rootViewController: feedViewController)
 
