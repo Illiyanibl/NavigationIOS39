@@ -12,14 +12,14 @@ class FeedViewController: UIViewController {
 
     let subViewCornerRaduis: CGFloat = 20
 
-    let feedModel = FeedModel()
+    private var feedViewModel: UsersVMOutput
 
     lazy var checkGuessButton: UIButton = {
         let button = CustomButton(title: "Проверить", titleColor: .black, backgroundColor: .lightGray)
         button.layer.cornerRadius = subViewCornerRaduis
         button.action = { [weak self] in
             guard let self = self else { return}
-            self.feedModelChecker(word: self.passwordTextField.text)}
+            feedViewModel.changeStateIfNeeded(word: passwordTextField.text ?? "")}
         return button
     }()
 
@@ -61,6 +61,14 @@ class FeedViewController: UIViewController {
         navigationController?.pushViewController(postViewController, animated: true)
 
     }
+    init(feedViewModel: UsersVMOutput) {
+        self.feedViewModel = feedViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -71,7 +79,8 @@ class FeedViewController: UIViewController {
         view.backgroundColor = .systemFill
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 24)]
         title = "Feed"
-        feedModel.subscribe(self)
+        updateButton()
+
     }
     private func setupSubView(){
         view.addSubview(showPostButton)
@@ -82,7 +91,6 @@ class FeedViewController: UIViewController {
 
     private func feedModelChecker(word: String?){
         guard let word else { return}
-        feedModel.check(word: word)
 
     }
 
@@ -111,18 +119,21 @@ class FeedViewController: UIViewController {
         ])
     }
 }
-extension FeedViewController: Subscriber {
-    func update(subject: FeedModel) {
+extension FeedViewController {
+    func updateButton() {
 
-        switch subject.wordState {
-        case .valid :
-            uiLabel.backgroundColor = .green
-        case .error:
-            uiLabel.backgroundColor = .red
-        case .wrong:
-            uiLabel.backgroundColor = .red
-        case .notCheck:
-            uiLabel.backgroundColor = .red
+        feedViewModel.currentState = { [weak self] state in
+            guard let self else { return}
+                switch state {
+                case .valid :
+                    uiLabel.backgroundColor = .green
+                case .error:
+                    uiLabel.backgroundColor = .red
+                case .wrong:
+                    uiLabel.backgroundColor = .red
+                case .notCheck:
+                    uiLabel.backgroundColor = .red
+                }
         }
 
     }
