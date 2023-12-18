@@ -65,7 +65,7 @@ class FeedViewController: UIViewController {
         self.feedViewModel = feedViewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -89,11 +89,6 @@ class FeedViewController: UIViewController {
         view.addSubview(uiLabel)
     }
 
-    private func feedModelChecker(word: String?){
-        guard let word else { return}
-
-    }
-
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             showPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -115,28 +110,23 @@ class FeedViewController: UIViewController {
             uiLabel.trailingAnchor.constraint(equalTo: checkGuessButton.trailingAnchor),
             uiLabel.topAnchor.constraint(equalTo: checkGuessButton.bottomAnchor, constant: 12),
             uiLabel.heightAnchor.constraint(equalTo: checkGuessButton.heightAnchor),
-
         ])
     }
 }
 extension FeedViewController {
     func updateButton() {
-
         feedViewModel.currentState = { [weak self] state in
             guard let self else { return}
-                switch state {
-                case .valid :
-                    uiLabel.backgroundColor = .green
-                case .error:
-                    uiLabel.backgroundColor = .red
-                case .wrong:
-                    uiLabel.backgroundColor = .red
-                case .notCheck:
-                    uiLabel.backgroundColor = .red
-                }
+            switch state {
+            case .valid :
+                uiLabel.backgroundColor = .green
+            case .error:
+                uiLabel.backgroundColor = .red
+            case .wrong:
+                uiLabel.backgroundColor = .red
+            case .notCheck:
+                uiLabel.backgroundColor = .red
+            }
         }
-
     }
-
-
 }

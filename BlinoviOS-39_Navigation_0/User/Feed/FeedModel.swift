@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class FeedModel {
     private var secretWord: String = "123"
     func getSecretWord() -> String{

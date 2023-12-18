@@ -16,32 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
-
-        let tabMainViewController = UITabBarController()
-        let viewModel = FeedViewModel()
-        let feedViewController = FeedViewController(feedViewModel: viewModel)
-
-      //  let feedViewController = FeedViewController()
-        //let profileViewController = ProfileViewController()
-        let loginViewController = LogInViewController()
-        loginViewController.loginDelegate = MyLoginFactory().makeLoginInspector()
-        tabMainViewController.tabBar.barStyle = .default
-        tabMainViewController.tabBar.backgroundColor = .white
-        tabMainViewController.tabBar.tintColor = .systemRed
-        tabMainViewController.tabBar.unselectedItemTintColor = .systemGray3
-
-        let profileNavigationController = UINavigationController(rootViewController: loginViewController)
-
-        let feedNavigationController = UINavigationController(rootViewController: feedViewController)
-
-
-        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile") , tag: 1)
-        feedNavigationController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(named: "feed"), tag: 0)
-
-        tabMainViewController.viewControllers = [feedNavigationController,profileNavigationController]
-        tabMainViewController.selectedIndex = 0
-
-        window.rootViewController = tabMainViewController
+        let maainCoordinatorView = MainCoordinator().start()
+        window.rootViewController = maainCoordinatorView
         self.window = window
         window.makeKeyAndVisible()
     }

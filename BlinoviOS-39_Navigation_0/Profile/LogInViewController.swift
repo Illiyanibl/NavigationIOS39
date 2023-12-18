@@ -13,7 +13,9 @@ final class LogInViewController: UIViewController {
     var loginDelegate: LoginViewControllerDelegate?
     
     private let colorSet = UIColor(hex: "#d3d3d3")
-    
+
+    var loginClick: Action?
+
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -85,7 +87,8 @@ final class LogInViewController: UIViewController {
         button.layer.masksToBounds = true
         button.action = { [weak self] in
             guard let self = self else { return}
-            self.pressLoginButton()}
+            self.pressLoginButton()
+        }
         button.addTarget(nil, action: #selector(allEventsLoginButton), for: .allEvents)
         return button
     }()
@@ -150,23 +153,25 @@ final class LogInViewController: UIViewController {
     }
     
     private func pressLoginButton(){
-        let authorizedUser = loginCheck()
-        guard let authorizedUser else {
+
+        let loginUser = loginCheck()
+        guard let loginUser else {
             authorisationLoginError()
             return
         }
-        let isAuthorized = authorisationCheck(login: authorizedUser.login, password: passwordText.text ?? "")
+
+        let isAuthorized = authorisationCheck(login: loginUser.login, password: passwordText.text ?? "")
         guard let isAuthorized  else { return}
         guard isAuthorized == true else {
             authorisationPasswordError()
             return
         }
-        
-        let profileViewController = ProfileViewController()
-        profileViewController.getUser(user: authorizedUser)
+
+        let profileViewController =  ProfileViewController()
+        profileViewController.getUser(user: loginUser)
         loginButton.isEnabled = false
-        navigationController?.pushViewController(profileViewController, animated: true)
-        
+        self.loginClick?(profileViewController)
+
     }
     func loginCheck() -> User?{
 #if DEBUG

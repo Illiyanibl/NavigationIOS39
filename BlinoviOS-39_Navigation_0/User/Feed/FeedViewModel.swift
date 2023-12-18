@@ -8,15 +8,15 @@
 import Foundation
 
 final class FeedViewModel: UsersVMOutput {
+
     private let model = FeedModel()
     var state: WordState = .notCheck{
         didSet {
             currentState?(state)
         }
     }
-
     var currentState: ((WordState) -> Void)?
-    
+
     func changeStateIfNeeded(word: String) {
         check(word: word)
     }
@@ -32,15 +32,11 @@ final class FeedViewModel: UsersVMOutput {
         }
         state = .valid
     }
+
     private func isWord (word: String) -> Bool {
         guard word.isEmpty != true else {
             return false
         }
         return true
     }
-
-
-
-    
-    
 }
