@@ -13,7 +13,7 @@ final class PhotosTableViewCell: UITableViewCell {
 
     private var photoCollection: [UIImageView] = []
 
-    var callBackTapArrow: (() -> Void)?
+    var callBackTapArrow: ((ProfileVCActionCases) -> Void)?
 
     private func createPhoto() -> UIImageView {
         lazy var  photo: UIImageView = {
@@ -67,7 +67,7 @@ final class PhotosTableViewCell: UITableViewCell {
     }
 
     @objc func tapPhotosButton(){
-        callBackTapArrow?()
+        callBackTapArrow?(.photosCollectionClick)
     }
 
     private func setupView(){

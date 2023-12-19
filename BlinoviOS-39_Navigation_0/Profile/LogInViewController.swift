@@ -4,18 +4,16 @@
 //
 //  Created by Illya Blinov on 14.10.23.
 //
-
 import UIKit
+
 
 final class LogInViewController: UIViewController {
     
     var currentUserService: UserService?
     var loginDelegate: LoginViewControllerDelegate?
+    var loginAction : ((LoginVCActionCases) -> Void)?
     
     private let colorSet = UIColor(hex: "#d3d3d3")
-
-    var loginClick: Action?
-
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -111,8 +109,10 @@ final class LogInViewController: UIViewController {
         scrollView.addSubview(contentView)
 #if DEBUG
         loginText.text = TestUserService().user.login
+        loginAction?(.test(TestUserService().user))
 #else
         loginText.text = CurrentUserService().user.login
+        loginAction?(.test(CurrentUserService().user))
 #endif
         passwordText.text = "123"
         authorizationViewGroup.addArrangedSubviews([
@@ -153,25 +153,22 @@ final class LogInViewController: UIViewController {
     }
     
     private func pressLoginButton(){
-
+        
         let loginUser = loginCheck()
         guard let loginUser else {
             authorisationLoginError()
             return
         }
-
+        
         let isAuthorized = authorisationCheck(login: loginUser.login, password: passwordText.text ?? "")
         guard let isAuthorized  else { return}
         guard isAuthorized == true else {
             authorisationPasswordError()
             return
         }
-
-        let profileViewController =  ProfileViewController()
-        profileViewController.getUser(user: loginUser)
         loginButton.isEnabled = false
-        self.loginClick?(profileViewController)
-
+        loginAction?(.autorization(loginUser))
+        
     }
     func loginCheck() -> User?{
 #if DEBUG

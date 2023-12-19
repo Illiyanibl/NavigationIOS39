@@ -37,7 +37,7 @@ enum AppFlow {
 }
 
 protocol FeedBaseCoordinator: Coordinator {
-    func showScreen()
+    func showScreen(viewController : UIViewController)
 }
 
 protocol ProfileBaseCoordinator: Coordinator {

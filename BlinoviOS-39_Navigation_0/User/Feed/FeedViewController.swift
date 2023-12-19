@@ -13,6 +13,7 @@ class FeedViewController: UIViewController {
     let subViewCornerRaduis: CGFloat = 20
 
     private var feedViewModel: UsersVMOutput
+    var feedAction : ((FeedVCActionCases) -> Void)?
 
     lazy var checkGuessButton: UIButton = {
         let button = CustomButton(title: "Проверить", titleColor: .black, backgroundColor: .lightGray)
@@ -56,10 +57,7 @@ class FeedViewController: UIViewController {
 
     @objc func showPostButtonPressed() {
         let post = Post(title: "Заголовок поста", text: "Текст поста", author: "", description: "", image: "")
-        let postViewController = PostViewController()
-        postViewController.getPost = post
-        navigationController?.pushViewController(postViewController, animated: true)
-
+        feedAction?(.showPost(post))
     }
     init(feedViewModel: UsersVMOutput) {
         self.feedViewModel = feedViewModel

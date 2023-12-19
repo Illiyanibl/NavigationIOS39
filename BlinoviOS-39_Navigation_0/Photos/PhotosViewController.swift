@@ -9,7 +9,8 @@ import UIKit
 import iOSIntPackage
 
 final class PhotosViewController: UIViewController, ImageLibrarySubscriber {
-    
+    var user: User?
+
     let photoSource = PhotoModel.createLocalGallery()
     let imagePublisherFacade = ImagePublisherFacade()
     var allCell: [PhotosCollectionViewCell] = []
@@ -43,6 +44,9 @@ final class PhotosViewController: UIViewController, ImageLibrarySubscriber {
     }
     override func viewWillDisappear(_ animated: Bool) {
         imagePublisherFacade.removeSubscription(for: self)
+    }
+    func getUser(user: User){
+        self.user = user
     }
     // MARK: - Setup Constraints
     
