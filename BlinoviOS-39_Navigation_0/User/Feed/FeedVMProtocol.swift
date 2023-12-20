@@ -13,7 +13,6 @@ protocol UsersVMOutput {
 }
 
 enum WordState {
-    case error
     case valid
     case wrong
     case notCheck

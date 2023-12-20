@@ -118,8 +118,6 @@ extension FeedViewController {
             switch state {
             case .valid :
                 uiLabel.backgroundColor = .green
-            case .error:
-                uiLabel.backgroundColor = .red
             case .wrong:
                 uiLabel.backgroundColor = .red
             case .notCheck:

@@ -22,8 +22,7 @@ final class FeedViewModel: UsersVMOutput {
     }
 
     func check(word: String) {
-        guard isWord(word: word) else {
-            state = .error
+        guard word.isEmpty != true else {
             return
         }
         guard word == model.getSecretWord() else {
@@ -31,12 +30,5 @@ final class FeedViewModel: UsersVMOutput {
             return
         }
         state = .valid
-    }
-
-    private func isWord (word: String) -> Bool {
-        guard word.isEmpty != true else {
-            return false
-        }
-        return true
     }
 }

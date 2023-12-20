@@ -9,6 +9,7 @@ import UIKit
 import StorageService
 class PostViewController: UIViewController {
     var getPost: Post?
+    var postAction : ((PostVCActionCases) -> Void)?
     lazy var rightButton : UIBarButtonItem = UIBarButtonItem(title: "Info", style: UIBarButtonItem.Style.plain, target: self, action: #selector(openInfo))
 
     override func viewDidLoad() {
@@ -22,7 +23,6 @@ class PostViewController: UIViewController {
     }
 
     @objc func openInfo(){
-        let infoViewController = InfoViewController()
-        present(infoViewController, animated: true)
+        postAction?(.openInfo)
     }
 }
