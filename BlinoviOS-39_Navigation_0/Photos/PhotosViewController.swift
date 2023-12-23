@@ -49,9 +49,9 @@ final class PhotosViewController: UIViewController{
             self.time = self.time + 1
         })
         imageProcessor.processImagesOnThread(sourceImages: photo ?? [UIImage()], filter: filter, qos: qos, completion: {[weak self] filtredPhoto in
+            timer.invalidate()
             var uiFiltredPhoto: [UIImage] = []
             filtredPhoto.forEach(){ uiFiltredPhoto.append(UIImage(cgImage: $0!))}
-            timer.invalidate()
             self?.photoUpdate(updatedPhoto: uiFiltredPhoto)
             DispatchQueue.main.async { self?.photoCollection.reloadData()}
             let time = self?.time ?? 0
