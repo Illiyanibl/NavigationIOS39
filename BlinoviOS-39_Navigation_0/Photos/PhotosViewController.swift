@@ -8,16 +8,17 @@
 import UIKit
 import iOSIntPackage
 
-final class PhotosViewController: UIViewController, ImageLibrarySubscriber {
+final class PhotosViewController: UIViewController{
+    var time: Double = 0.0
     var user: User?
 
     let photoSource = PhotoModel.createLocalGallery()
-    let imagePublisherFacade = ImagePublisherFacade()
+    let imageProcessor = ImageProcessor()
     var allCell: [PhotosCollectionViewCell] = []
     lazy var photo = PhotoModel.getImageFromModel(photoList: photoSource)
-    
-    
-    
+
+
+
     lazy var photoCollection: UICollectionView = {
         let loyut = UICollectionViewFlowLayout()
         loyut.scrollDirection = .vertical
@@ -35,21 +36,40 @@ final class PhotosViewController: UIViewController, ImageLibrarySubscriber {
         view.addSubviews([photoCollection])
         navigationController?.navigationBar.isHidden = false
         setupConstraints()
-        subscribeImagePublisherFacade()
+        //filterImagesOnThread(qos: .utility, filter: .noir) // 1.2 секунды
+        //filterImagesOnThread(qos: .background, filter: .noir) // 4.9 секунды
+       // filterImagesOnThread(qos: .default, filter: .colorInvert) // 1 секунда
+       // filterImagesOnThread(qos: .userInteractive, filter: .colorInvert) // 1 секунда
+        //filterImagesOnThread(qos: .utility, filter: .colorInvert) // 1.1 секунды
+        filterImagesOnThread(qos: .background, filter: .colorInvert) // 4.7 секунды
+
     }
-    private func subscribeImagePublisherFacade(){
-        imagePublisherFacade.subscribe(self)
-        imagePublisherFacade.addImagesWithTimer(time: 0.5, repeat: photoSource.count - 2, userImages: photo)
-        
+    func filterImagesOnThread(qos: QualityOfService, filter: ColorFilter){
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { timer in
+            self.time = self.time + 1
+        })
+        imageProcessor.processImagesOnThread(sourceImages: photo ?? [UIImage()], filter: filter, qos: qos, completion: {[weak self] filtredPhoto in
+            var uiFiltredPhoto: [UIImage] = []
+            filtredPhoto.forEach(){ uiFiltredPhoto.append(UIImage(cgImage: $0!))}
+            timer.invalidate()
+            self?.photoUpdate(updatedPhoto: uiFiltredPhoto)
+            DispatchQueue.main.async { self?.photoCollection.reloadData()}
+            let time = self?.time ?? 0
+            DispatchQueue.main.async { print(time / 10)}
+        })
     }
+
+    func photoUpdate(updatedPhoto: [UIImage]){
+        photo = updatedPhoto
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
-        imagePublisherFacade.removeSubscription(for: self)
     }
     func getUser(user: User){
         self.user = user
     }
     // MARK: - Setup Constraints
-    
+
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             photoCollection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -61,44 +81,40 @@ final class PhotosViewController: UIViewController, ImageLibrarySubscriber {
 }
 // MARK: - Extension
 extension PhotosViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    
+
     private var inset: CGFloat  { return 8}
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.bounds.width - inset * 4) / 3
         return CGSize(width: width, height: width)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return inset
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return inset
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photoSource.count
+        (photo?.count ?? 30)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.identifier, for: indexPath) as! PhotosCollectionViewCell
         let tap = UITapGestureRecognizer(target: self, action: #selector(test))
         cell.photoView.addGestureRecognizer(tap)
-        allCell.append(cell)
-        print(allCell.count)
+        cell.setupCell(photo: photo?[indexPath.item])
         return cell
     }
     @objc func test(){
         print("test")
     }
-    func receive(images: [UIImage]){
-        allCell[images.count - 1].setupCell(photo: images[images.count - 1])
-        
-    }
+
 }
 
 
