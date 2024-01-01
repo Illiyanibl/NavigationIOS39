@@ -41,6 +41,8 @@
 		51B05CD02AC2BCB000AF91DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */; };
 		51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD72AC2C43200AF91DC /* FeedViewController.swift */; };
 		51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */; };
+		51B0CBA62B3DE1A800CD01E8 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0CBA52B3DE1A800CD01E8 /* PasswordGenerator.swift */; };
+		51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */; };
 		51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEEC622ADAED760036F2B2 /* LogInViewController.swift */; };
 		51DADB8E2B13A3350027C3EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DADB8D2B13A3350027C3EA /* User.swift */; };
 		51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD2B922AED023A004A7D1A /* PhotoModel.swift */; };
@@ -126,6 +128,8 @@
 		51B05CD12AC2BCB000AF91DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51B05CD72AC2C43200AF91DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		51B0CBA52B3DE1A800CD01E8 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
+		51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForce.swift; sourceTree = "<group>"; };
 		51CEEC622ADAED760036F2B2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		51DADB8D2B13A3350027C3EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		51DD2B922AED023A004A7D1A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
@@ -292,8 +296,10 @@
 				51654F7A2B24632B0038D9A6 /* Feed */,
 				51DADB8D2B13A3350027C3EA /* User.swift */,
 				513A742E2B1C7DB000E82279 /* Checker.swift */,
+				51B0CBA52B3DE1A800CD01E8 /* PasswordGenerator.swift */,
 				513A74302B1C87FC00E82279 /* LoginInspector.swift */,
 				513A74322B1C8ED500E82279 /* LoginFactory.swift */,
+				51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				51654F7C2B2463480038D9A6 /* FeedModel.swift in Sources */,
 				51654F792B2454A30038D9A6 /* CustomButton.swift in Sources */,
 				5121B0342B2F1D6600E0E849 /* BaseCoordinator.swift in Sources */,
+				51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */,
 				51DADB8E2B13A3350027C3EA /* User.swift in Sources */,
 				512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */,
 				51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */,
@@ -485,6 +492,7 @@
 				51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */,
 				518F344C2AE828F9006EA7E8 /* PhotosTableViewCell.swift in Sources */,
 				512220BB2AC96AC400CDCD66 /* InfoViewController.swift in Sources */,
+				51B0CBA62B3DE1A800CD01E8 /* PasswordGenerator.swift in Sources */,
 				5121B0042B28CDC500E0E849 /* FeedViewModel.swift in Sources */,
 				518F34502AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift in Sources */,
 				518F344E2AE82A66006EA7E8 /* PhotosViewController.swift in Sources */,
