@@ -7,6 +7,7 @@
 
 import UIKit
 class InfoViewController: UIViewController {
+
     let alertButtonCornerRadius: CGFloat = 20
     lazy var alertButton: UIButton = {
         let button = UIButton()
@@ -18,6 +19,7 @@ class InfoViewController: UIViewController {
         button.addTarget(nil, action: #selector(showAlert), for: .touchUpInside)
         return button
     }()
+
     override func viewDidLoad(){
         super.viewDidLoad()
         view.backgroundColor = .black
