@@ -110,6 +110,8 @@ final class LogInViewController: UIViewController {
             guard let self = self else { return}
             self.setupPassword()
         }
+        button.isEnabled = false
+        button.isHidden = true
         button.addTarget(nil, action: #selector(allEventsLoginButton), for: .allEvents)
         return button
     }()
@@ -137,7 +139,7 @@ final class LogInViewController: UIViewController {
         loginText.text = CurrentUserService().user.login
         loginAction?(.test(CurrentUserService().user))
 #endif
-        //  passwordText.text = Checker.shared.password
+        passwordText.text = Checker.shared.password
         authorizationViewGroup.addArrangedSubviews([
             loginText,
             separatorView,
@@ -146,16 +148,18 @@ final class LogInViewController: UIViewController {
         contentView.addSubviews([logoImage, authorizationViewGroup, activityIndicator, loginButton, bruteButton])
     }
     private func setupPassword(){
+        bruteButton.isEnabled = false
         activityIndicator.startAnimating()
-        let dq = DispatchQueue(label: "brute", qos: .background)
+        let dqBruteQueue = DispatchQueue(label: "bruteQueue", qos: .background)
         let brute = BruteForce()
-        dq.async {
-            let password = brute.bruteForce(length: 4)
+        dqBruteQueue.async {
+            let password = brute.bruteForce(length: 5)
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return}
                 self.passwordText.text = password
                 self.passwordText.isSecureTextEntry = false
                 self.activityIndicator.stopAnimating()
+                self.bruteButton.isEnabled = true
             }
         }
     }
@@ -255,6 +259,12 @@ final class LogInViewController: UIViewController {
     }
 
     private func setupConstraints(){
+        var bruteButtonHeight: CGFloat = 50
+        var btuteButtonTopAnchor: CGFloat = 16
+        if bruteButton.isHidden == true {
+            bruteButtonHeight = 0
+            btuteButtonTopAnchor = 0
+        }
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
@@ -283,10 +293,10 @@ final class LogInViewController: UIViewController {
             loginText.heightAnchor.constraint(equalToConstant: 49.5),
             passwordText.heightAnchor.constraint(equalToConstant: 49.5),
 
-            bruteButton.topAnchor.constraint(equalTo: authorizationViewGroup.bottomAnchor, constant: 16),
+            bruteButton.topAnchor.constraint(equalTo: authorizationViewGroup.bottomAnchor, constant: btuteButtonTopAnchor),
             bruteButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             bruteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            bruteButton.heightAnchor.constraint(equalToConstant: 50),
+            bruteButton.heightAnchor.constraint(equalToConstant: bruteButtonHeight),
 
             loginButton.topAnchor.constraint(equalTo: bruteButton.bottomAnchor, constant: 16),
             loginButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),

@@ -17,10 +17,10 @@ final class Checker{
     let password: String
 #if DEBUG
     static let shared = Checker(login: TestUserService().user.login,
-                                password: PasswordGenerator.generatePassword(length: 4))
+                                password: PasswordGenerator.generatePassword(length: 5))
 #else
     static let shared = Checker(login: CurrentUserService().user.login,
-                                password: PasswordGenerator.generatePassword(length: 4))
+                                password: PasswordGenerator.generatePassword(length: 5))
 #endif
     private init(login: String, password: String){
         self.login = login
