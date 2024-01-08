@@ -36,13 +36,21 @@ final class PhotosViewController: UIViewController{
         view.addSubviews([photoCollection])
         navigationController?.navigationBar.isHidden = false
         setupConstraints()
-        //filterImagesOnThread(qos: .utility, filter: .noir) // 1.2 секунды
-        //filterImagesOnThread(qos: .background, filter: .noir) // 4.9 секунды
-       // filterImagesOnThread(qos: .default, filter: .colorInvert) // 1 секунда
-       // filterImagesOnThread(qos: .userInteractive, filter: .colorInvert) // 1 секунда
-        //filterImagesOnThread(qos: .utility, filter: .colorInvert) // 1.1 секунды
-        filterImagesOnThread(qos: .background, filter: .colorInvert) // 4.7 секунды
-
+        holdFilter(duration: 8, qos: .utility, filter: .colorInvert)
+    }
+    // Применяет фильтр к текущей коллекции фото на заданный промежуток веремени после чего отменяет изменение
+    func holdFilter(duration: Float, qos: QualityOfService, filter: ColorFilter ) {
+        let noFiltredPhoto = self.photo
+        self.filterImagesOnThread(qos: qos, filter: filter)
+        var timerDuration: Float = 0.0
+        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
+            timerDuration += 1.0
+            if timerDuration >= duration {
+                timer.invalidate()
+                self?.photoUpdate(updatedPhoto: noFiltredPhoto ?? [])
+                DispatchQueue.main.async { self?.photoCollection.reloadData()}
+            }
+        })
     }
     func filterImagesOnThread(qos: QualityOfService, filter: ColorFilter){
         let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { timer in
