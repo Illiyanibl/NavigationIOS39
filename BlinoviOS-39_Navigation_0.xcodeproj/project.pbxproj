@@ -21,6 +21,7 @@
 		513A742F2B1C7DB000E82279 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A742E2B1C7DB000E82279 /* Checker.swift */; };
 		513A74312B1C87FC00E82279 /* LoginInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A74302B1C87FC00E82279 /* LoginInspector.swift */; };
 		513A74332B1C8ED500E82279 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A74322B1C8ED500E82279 /* LoginFactory.swift */; };
+		515390842B4EE29200DC00E2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515390832B4EE29200DC00E2 /* NetworkService.swift */; };
 		51654F792B2454A30038D9A6 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51654F782B2454A30038D9A6 /* CustomButton.swift */; };
 		51654F7C2B2463480038D9A6 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51654F7B2B2463480038D9A6 /* FeedModel.swift */; };
 		516AF8C02AD5417B00AE1597 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */; };
@@ -108,6 +109,7 @@
 		513A742E2B1C7DB000E82279 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		513A74302B1C87FC00E82279 /* LoginInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspector.swift; sourceTree = "<group>"; };
 		513A74322B1C8ED500E82279 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
+		515390832B4EE29200DC00E2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		51654F782B2454A30038D9A6 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		51654F7B2B2463480038D9A6 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		515390822B4EE27600DC00E2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				515390832B4EE29200DC00E2 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		51654F772B24544F0038D9A6 /* CustomUIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +283,7 @@
 		51B05CC22AC2BCAF00AF91DC /* BlinoviOS-39_Navigation_0 */ = {
 			isa = PBXGroup;
 			children = (
+				515390822B4EE27600DC00E2 /* Service */,
 				5121B0322B2F1D3500E0E849 /* Coordinator */,
 				51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */,
 				51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */,
@@ -481,6 +492,7 @@
 				5121B0342B2F1D6600E0E849 /* BaseCoordinator.swift in Sources */,
 				51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */,
 				51DADB8E2B13A3350027C3EA /* User.swift in Sources */,
+				515390842B4EE29200DC00E2 /* NetworkService.swift in Sources */,
 				512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */,
 				51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */,
 				51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */,

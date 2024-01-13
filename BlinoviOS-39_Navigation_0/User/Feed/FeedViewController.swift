@@ -78,7 +78,6 @@ class FeedViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 24)]
         title = "Feed"
         updateButton()
-
     }
     private func setupSubView(){
         view.addSubview(showPostButton)
@@ -111,6 +110,7 @@ class FeedViewController: UIViewController {
         ])
     }
 }
+
 extension FeedViewController {
     func updateButton() {
         feedViewModel.currentState = { [weak self] state in
