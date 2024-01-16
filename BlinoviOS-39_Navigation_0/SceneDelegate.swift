@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let listAppConfiguration = [AppConfiguration.species("https://swapi.dev/api/species/"), AppConfiguration.species("https://swapi.dev/api/species/"), AppConfiguration.starships("https://swapi.dev/api/starships/")]
         let appConfiguration: AppConfiguration = listAppConfiguration.randomElement() ?? species
-        NetworkService.request(for: appConfiguration)
+        //NetworkService.request(for: appConfiguration)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

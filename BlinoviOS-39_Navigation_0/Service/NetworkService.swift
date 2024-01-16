@@ -6,11 +6,6 @@
 //
 
 import Foundation
-enum AppConfiguration {
-    case species(String) //"https://swapi.dev/api/species/"
-    case vehicles(String) //"https://swapi.dev/api/vehicles/"
-    case starships(String) //"https://swapi.dev/api/starships/"
-}
 
 struct NetworkServiceSession {
     let sessionQueue = {
@@ -28,6 +23,35 @@ struct NetworkServiceSession {
 }
 
 struct NetworkService {
+
+    static func requestURL(for url: String, completion: @escaping (Result<Data, NetworkError>) -> Void){
+        guard let url = URL(string: url) else {
+            print("=== Wrong URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        let task = NetworkServiceSession.shared.session.dataTask(with: request) { data, response, error in
+            if let error {
+                DispatchQueue.main.async {
+                    completion(.failure(.custom(description: error.localizedDescription)))
+                }
+            }
+            guard response is HTTPURLResponse else { return }
+
+            guard let data else {
+                DispatchQueue.main.async {
+                    completion(.failure(.server))
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                completion(.success(data))
+            }
+        }
+        task.resume()
+    }
+
+
     static func request(for configuration: AppConfiguration){
         //Не очень понял зачем, но по условиям понадобился enum с ассоциированными значениями типа URL или String
         var getUrl: URL?
@@ -57,4 +81,5 @@ struct NetworkService {
         }
         task.resume()
     }
+
 }

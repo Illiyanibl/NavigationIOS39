@@ -44,9 +44,14 @@
 		51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */; };
 		51B0CBA62B3DE1A800CD01E8 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0CBA52B3DE1A800CD01E8 /* PasswordGenerator.swift */; };
 		51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */; };
+		51CBEF2C2B55A64A005C20FE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CBEF2B2B55A64A005C20FE /* NetworkError.swift */; };
+		51CBEF2E2B55AC68005C20FE /* PlanetsJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CBEF2D2B55AC68005C20FE /* PlanetsJSONModel.swift */; };
 		51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEEC622ADAED760036F2B2 /* LogInViewController.swift */; };
 		51DADB8E2B13A3350027C3EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DADB8D2B13A3350027C3EA /* User.swift */; };
 		51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD2B922AED023A004A7D1A /* PhotoModel.swift */; };
+		51E19BF02B543AD7005538A6 /* UserJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E19BEF2B543AD7005538A6 /* UserJSONModel.swift */; };
+		51E19BF22B543D69005538A6 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E19BF12B543D69005538A6 /* AppConfiguration.swift */; };
+		51E19BF42B544B08005538A6 /* SerializationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E19BF32B544B08005538A6 /* SerializationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,9 +137,14 @@
 		51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		51B0CBA52B3DE1A800CD01E8 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForce.swift; sourceTree = "<group>"; };
+		51CBEF2B2B55A64A005C20FE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		51CBEF2D2B55AC68005C20FE /* PlanetsJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsJSONModel.swift; sourceTree = "<group>"; };
 		51CEEC622ADAED760036F2B2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		51DADB8D2B13A3350027C3EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		51DD2B922AED023A004A7D1A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		51E19BEF2B543AD7005538A6 /* UserJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJSONModel.swift; sourceTree = "<group>"; };
+		51E19BF12B543D69005538A6 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		51E19BF32B544B08005538A6 /* SerializationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +209,11 @@
 		515390822B4EE27600DC00E2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				51E19BEE2B543A99005538A6 /* JSON model */,
 				515390832B4EE29200DC00E2 /* NetworkService.swift */,
+				51E19BF12B543D69005538A6 /* AppConfiguration.swift */,
+				51E19BF32B544B08005538A6 /* SerializationData.swift */,
+				51CBEF2B2B55A64A005C20FE /* NetworkError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -313,6 +327,15 @@
 				51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		51E19BEE2B543A99005538A6 /* JSON model */ = {
+			isa = PBXGroup;
+			children = (
+				51E19BEF2B543AD7005538A6 /* UserJSONModel.swift */,
+				51CBEF2D2B55AC68005C20FE /* PlanetsJSONModel.swift */,
+			);
+			path = "JSON model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,22 +515,27 @@
 				5121B0342B2F1D6600E0E849 /* BaseCoordinator.swift in Sources */,
 				51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */,
 				51DADB8E2B13A3350027C3EA /* User.swift in Sources */,
+				51E19BF22B543D69005538A6 /* AppConfiguration.swift in Sources */,
 				515390842B4EE29200DC00E2 /* NetworkService.swift in Sources */,
 				512220B92AC95E5E00CDCD66 /* PostViewController.swift in Sources */,
+				51CBEF2E2B55AC68005C20FE /* PlanetsJSONModel.swift in Sources */,
 				51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */,
 				51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */,
 				513A742F2B1C7DB000E82279 /* Checker.swift in Sources */,
 				5121B0362B2F262600E0E849 /* MainCoordinator.swift in Sources */,
+				51CBEF2C2B55A64A005C20FE /* NetworkError.swift in Sources */,
 				513A74312B1C87FC00E82279 /* LoginInspector.swift in Sources */,
 				512220BE2ACBD32700CDCD66 /* ProfileHeaderView.swift in Sources */,
 				5121B03A2B2F3A7100E0E849 /* ProfileCoordinator.swift in Sources */,
 				51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */,
 				518F344C2AE828F9006EA7E8 /* PhotosTableViewCell.swift in Sources */,
+				51E19BF42B544B08005538A6 /* SerializationData.swift in Sources */,
 				512220BB2AC96AC400CDCD66 /* InfoViewController.swift in Sources */,
 				51B0CBA62B3DE1A800CD01E8 /* PasswordGenerator.swift in Sources */,
 				5121B0042B28CDC500E0E849 /* FeedViewModel.swift in Sources */,
 				518F34502AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift in Sources */,
 				518F344E2AE82A66006EA7E8 /* PhotosViewController.swift in Sources */,
+				51E19BF02B543AD7005538A6 /* UserJSONModel.swift in Sources */,
 				5121B0382B2F317E00E0E849 /* FeedCoordinator.swift in Sources */,
 				51B05CC62AC2BCAF00AF91DC /* SceneDelegate.swift in Sources */,
 				513A74332B1C8ED500E82279 /* LoginFactory.swift in Sources */,
