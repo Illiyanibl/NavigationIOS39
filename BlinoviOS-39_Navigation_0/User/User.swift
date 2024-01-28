@@ -8,8 +8,9 @@
 import UIKit
 
 protocol UserService {
-    var user: User { get set }
+    var listUser: [User] { get set }
     func getUser(login: String) -> User?
+    mutating func newUser(login: String)
 }
 
 class User {
@@ -24,8 +25,8 @@ class User {
         self.avatar = avatar
         self.status = status
     }
-    static func newUser() -> User{
-        let user = User(login: "Admin", fullName: "Friendly interface", avatar: UIImage(named: "user") ?? UIImage(), status: "i'll be back")
+    static func newUser(login: String) -> User{
+        let user = User(login: login, fullName: "Friendly \(login)", avatar: UIImage(named: "user") ?? UIImage(), status: "I' m \(login)")
         return user
     }
     static func testUser() -> User{
@@ -34,20 +35,25 @@ class User {
     }
 }
 class TestUserService: UserService {
-    var user: User
+    var listUser: [User]
     init() {
-        self.user = User.testUser()
+        self.listUser = []
     }
 }
 
 class CurrentUserService: UserService {
-    var user: User
+    var listUser: [User]
     init() {
-        self.user = User.newUser()
+        self.listUser = []
     }
 }
 extension UserService {
     func getUser(login: String) -> User? {
-        return user.login == login ? user : nil
+        var findUser: User?
+        listUser.forEach(){ if login == $0.login { findUser = $0 }}
+        return findUser
+    }
+    mutating func newUser(login: String) {
+        listUser.append(User.newUser(login: login))
     }
 }

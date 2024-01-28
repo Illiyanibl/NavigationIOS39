@@ -8,10 +8,9 @@ import UIKit
 
 
 final class LogInViewController: UIViewController {
-
-    var currentUserService: UserService?
-    var loginDelegate: LoginViewControllerDelegate?
+    private var delegate: LoginViewControllerDelegate?  =  LoginInspector()//weak должно было быть, но ругается
     var loginAction : ((LoginVCActionCases) -> Void)?
+
 
 
     private let colorSet = UIColor(hex: "#d3d3d3")
@@ -58,7 +57,8 @@ final class LogInViewController: UIViewController {
 
     private lazy var  loginText: UITextField = {
         let text = UITextField()
-        text.placeholder = "Email or phone"
+        text.placeholder = "Login"
+        text.text = "admin"
         text.autocapitalizationType = .none
         text.indent(size: 16)
         text.backgroundColor = .systemGray6
@@ -71,6 +71,7 @@ final class LogInViewController: UIViewController {
     private lazy var passwordText: UITextField = {
         let text = UITextField()
         text.placeholder = "Password"
+        text.text = "123456"
         text.backgroundColor = .systemGray6
         text.textColor = .black
         text.autocapitalizationType = .none
@@ -122,6 +123,10 @@ final class LogInViewController: UIViewController {
         setupSubViews()
         setupConstraints()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        delegate?.signOut()
+    }
 
     private func setupView(){
         self.navigationController?.navigationBar.isHidden = true
@@ -132,20 +137,13 @@ final class LogInViewController: UIViewController {
         view.addSubview(scrollView)
         setupLoginButton()
         scrollView.addSubview(contentView)
-#if DEBUG
-        loginText.text = TestUserService().user.login
-        loginAction?(.test(TestUserService().user))
-#else
-        loginText.text = CurrentUserService().user.login
-        loginAction?(.test(CurrentUserService().user))
-#endif
-        passwordText.text = Checker.shared.password
         authorizationViewGroup.addArrangedSubviews([
             loginText,
             separatorView,
             passwordText,
         ])
         contentView.addSubviews([logoImage, authorizationViewGroup, activityIndicator, loginButton, bruteButton])
+
     }
     private func setupPassword(){
         bruteButton.isEnabled = false
@@ -194,45 +192,26 @@ final class LogInViewController: UIViewController {
     }
 
     private func pressLoginButton(){
+        loginCheck()
 
-        let loginUser = loginCheck()
-        guard let loginUser else {
-            authorisationLoginError()
-            return
+
+    }
+    func loginCheck(){
+        activityIndicator.startAnimating()
+        delegate?.errorAuthAction = {[weak self] errorDescription in
+            self?.activityIndicator.stopAnimating()
+            self?.authorisationError(description: errorDescription)
         }
-
-        let isAuthorized = authorisationCheck(login: loginUser.login, password: passwordText.text ?? "")
-        guard let isAuthorized  else { return}
-        guard isAuthorized == true else {
-            authorisationPasswordError()
-            return
+        delegate?.authAction = {[weak self] user in
+            self?.activityIndicator.stopAnimating()
+            print("Открываю профиль \(user.login)")
+            self?.loginAction?(.autorisation(user))
         }
-        loginButton.isEnabled = false
-        loginAction?(.autorization(loginUser))
-
-    }
-    func loginCheck() -> User?{
-#if DEBUG
-        currentUserService = TestUserService()
-#else
-        currentUserService = CurrentUserService()
-#endif
-        let authorizedUser: User? = currentUserService?.getUser(login: loginText.text ?? "")
-        return authorizedUser
+        delegate?.check(login: loginText.text, password: passwordText.text)
     }
 
-    func authorisationCheck(login: String, password: String) -> Bool?{
-        return loginDelegate?.check(login: login, password: password)
-    }
-
-    private func authorisationLoginError() {
-        let alert = UIAlertController(title: "Login is wrong", message: "\n Не верный login", preferredStyle: .alert)
-        let actionOk = UIAlertAction(title: "Ok", style: .default) { _ in }
-        alert.addAction(actionOk)
-        present(alert, animated: true)
-    }
-    private func authorisationPasswordError() {
-        let alert = UIAlertController(title: "Password is wrong", message: "\n Не верный password", preferredStyle: .alert)
+    private func authorisationError(description: String) {
+        let alert = UIAlertController(title: "Authorisation error", message: description, preferredStyle: .alert)
         let actionOk = UIAlertAction(title: "Ok", style: .default) { _ in }
         alert.addAction(actionOk)
         present(alert, animated: true)
@@ -248,11 +227,11 @@ final class LogInViewController: UIViewController {
         case 0:
             loginButton.alpha = 1
         case 1:
-            loginButton.alpha = 0.8
+            loginButton.alpha = 1
         case 2:
-            loginButton.alpha = 0.8
+            loginButton.alpha = 1
         case 3:
-            loginButton.alpha = 0.8
+            loginButton.alpha = 1
         default:
             loginButton.alpha = 1
         }

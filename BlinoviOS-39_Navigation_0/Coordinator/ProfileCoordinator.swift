@@ -12,7 +12,7 @@ enum ProfileVCActionCases {
 }
 
 enum LoginVCActionCases {
-    case autorization(User)
+    case autorisation(User)
     case test(User)
 }
 
@@ -27,11 +27,11 @@ class ProfileCoordinator: ProfileBaseCoordinator {
         let loginViewController = LogInViewController()
         let profileViewController =  ProfileViewController()
         let photosViewController = PhotosViewController()
-        loginViewController.loginDelegate = MyLoginFactory().makeLoginInspector()
         
         loginViewController.loginAction = { [weak self] in
             switch $0 {
-            case .autorization(let user):
+            case .autorisation(let user):
+                print("Координатор получил пользователя \(user.login)")
                 profileViewController.getUser(user: user)
                 self?.showScreen(viewController: profileViewController)
             case .test(let user):

@@ -7,7 +7,7 @@
 
 final class BruteForce{
     var bruteAction : ((String) -> Void)?
-    let cheker = Checker.shared
+   // let cheker = Checker.shared
     var password: String?
     func bruteForce(length: Int = 3) -> String{
         var passwordList: [String] = []
@@ -40,11 +40,10 @@ final class BruteForce{
             if password != nil { break}
             Array(PasswordGenerator.dictionary).forEach(){element in
                 newPassword = (String(word) + String(element))
-                if cheker.check(login: cheker.login, password: newPassword) {
+              //  if cheker.check(login: cheker.login, password: newPassword) {
                     password = newPassword
                     bruteAction?(newPassword)
                 }
             }
         }
     }
-}

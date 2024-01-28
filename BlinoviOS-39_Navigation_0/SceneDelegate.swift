@@ -25,11 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
         let listAppConfiguration = [AppConfiguration.species("https://swapi.dev/api/species/"), AppConfiguration.species("https://swapi.dev/api/species/"), AppConfiguration.starships("https://swapi.dev/api/starships/")]
-        let appConfiguration: AppConfiguration = listAppConfiguration.randomElement() ?? species
+        //let appConfiguration: AppConfiguration = listAppConfiguration.randomElement() ?? species
         //NetworkService.request(for: appConfiguration)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
+        var delegate: LoginViewControllerDelegate?
+        delegate = LoginInspector()
+        delegate?.signOut()
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.

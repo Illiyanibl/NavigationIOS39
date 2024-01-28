@@ -8,7 +8,7 @@
 import Foundation
 
 class FeedModel {
-    private var secretWord: String = Checker.shared.password
+    private var secretWord: String = "123"
     func getSecretWord() -> String{
         return secretWord
     }

@@ -33,7 +33,6 @@ class FeedViewController: UIViewController {
 
     lazy var passwordTextField: UITextField = {
         let text = UITextField()
-        text.text = Checker.shared.password
         text.layer.cornerRadius = subViewCornerRaduis
         text.indent(size: 16)
         text.translatesAutoresizingMaskIntoConstraints = false

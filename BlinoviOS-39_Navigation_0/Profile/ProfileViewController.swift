@@ -89,6 +89,7 @@ final class ProfileViewController: UIViewController {
     
     func getUser(user: User){
         self.user = user
+        setUser(user: user)
     }
     
     func tapAvatar(avatarFrame: CGRect, avatarCenter:  CGPoint){
