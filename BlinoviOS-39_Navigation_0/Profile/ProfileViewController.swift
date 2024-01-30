@@ -54,7 +54,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let user else {
-            navigationController?.pushViewController(LogInViewController(), animated: true)
+            profileAction?(.authError)
             return
         }
         setUser(user: user)

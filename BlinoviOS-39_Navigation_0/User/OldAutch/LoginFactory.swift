@@ -11,6 +11,7 @@ protocol LoginFactory {
 }
 struct MyLoginFactory: LoginFactory {
     func makeLoginInspector() -> LoginInspector {
-        LoginInspector()
+        print("LoginInsprctor Создан")
+        return LoginInspector(userService: CurrentUserService(), checkerService: CheckerService())
     }
 }

@@ -20,7 +20,7 @@ class MainCoordinator: MainBaseCoordinator {
         return tabBarController
     }()
     var profileCoordinator: ProfileBaseCoordinator = ProfileCoordinator()
-    
+
     
     func start() -> UIViewController {
         let feedViewController = feedCoordinator.start()

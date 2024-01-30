@@ -8,9 +8,17 @@ import UIKit
 
 
 final class LogInViewController: UIViewController {
-    private var delegate: LoginViewControllerDelegate?  =  LoginInspector()//weak должно было быть, но ругается
+    private var delegate: LoginViewControllerDelegate?
     var loginAction : ((LoginVCActionCases) -> Void)?
-
+    init(delegate: LoginViewControllerDelegate) {
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
 
     private let colorSet = UIColor(hex: "#d3d3d3")
@@ -193,10 +201,9 @@ final class LogInViewController: UIViewController {
 
     private func pressLoginButton(){
         loginCheck()
-
-
     }
     func loginCheck(){
+
         activityIndicator.startAnimating()
         delegate?.errorAuthAction = {[weak self] errorDescription in
             self?.activityIndicator.stopAnimating()

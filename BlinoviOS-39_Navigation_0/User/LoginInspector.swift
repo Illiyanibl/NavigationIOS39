@@ -7,7 +7,7 @@
 
 import Foundation
 import FirebaseAuth
-protocol LoginViewControllerDelegate: AnyObject {
+protocol LoginViewControllerDelegate: Any {
     func check(login: String?, password: String?)
     func signOut()
     var authAction : ((User) -> Void)? { get set } // 
@@ -15,11 +15,16 @@ protocol LoginViewControllerDelegate: AnyObject {
 }
 
 final class LoginInspector: LoginViewControllerDelegate {
-    let checkerService: CheckerServiceProtocol = CheckerService()
-    var userService: UserService = CurrentUserService()
+    var checkerService: CheckerServiceProtocol
+    var userService: UserService
     var authAction : ((User) -> Void)?
     var errorAuthAction : ((String) -> Void)?
-    func check(login: String?, password: String?) {
+
+    init(userService: UserService, checkerService: CheckerServiceProtocol) {
+        self.userService = userService
+        self.checkerService = checkerService
+    }
+    func  check(login: String?, password: String?)  {
         guard let login else {
             return
         }
@@ -29,8 +34,8 @@ final class LoginInspector: LoginViewControllerDelegate {
         guard requirementsVerification(login: login, password: password) else {
             return
         }
-        //!тут перестает работать если сделать ссылку слабой
-        checkerService.checkCredentials(login: login, password: password, email: nil){ authResult in //[weak self]
+        print("Логин инспетор вызывается")
+        checkerService.checkCredentials(login: login, password: password, email: nil){authResult in //[weak self]
             switch authResult {
             case .success(_):
                 self.userService.newUser(login: login)

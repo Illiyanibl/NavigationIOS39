@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidDisconnect(_ scene: UIScene) {
         var delegate: LoginViewControllerDelegate?
-        delegate = LoginInspector()
+        delegate =  MyLoginFactory().makeLoginInspector()
         delegate?.signOut()
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
