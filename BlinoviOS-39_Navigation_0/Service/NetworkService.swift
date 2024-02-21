@@ -23,7 +23,6 @@ struct NetworkServiceSession {
 }
 
 struct NetworkService {
-
     static func requestURL(for url: String, completion: @escaping (Result<Data, NetworkError>) -> Void){
         guard let url = URL(string: url) else {
             print("=== Wrong URL")

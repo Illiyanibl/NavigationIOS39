@@ -135,7 +135,6 @@ final class ProfileViewController: UIViewController {
     
     func avatarAnimationOpen(){
         let finalCenter = self.view.center
-        
         let animator = UIViewPropertyAnimator(duration: 0.5, curve: .linear){
             self.avatar.frame = CGRect(x: 6, y: 6, width: self.bgAvatar.frame.width - 12, height: self.bgAvatar.frame.width - 12)
             self.avatar.center = CGPoint(x: finalCenter.x, y: finalCenter.y)
@@ -215,8 +214,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier:
-                                                        PostTableViewCell.identifier, for: indexPath) as!  PostTableViewCell
-            cell.setupSell(post: posts[indexPath.row])
+                                                        PhotosTableViewCell.identifier, for: indexPath) as!  PhotosTableViewCell
+            cell.callBackTapArrow = profileAction
             return cell
         }
     }
