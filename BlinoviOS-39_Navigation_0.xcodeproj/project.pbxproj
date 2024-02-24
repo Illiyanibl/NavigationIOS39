@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5101DB2D2AE03B7F00500802 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5101DB2C2AE03B7F00500802 /* PostTableViewCell.swift */; };
 		5112B6422B1FA151002A7F1F /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 5112B6412B1FA151002A7F1F /* iOSIntPackage */; };
+		5116E5A32B8672AF00548C72 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5A22B8672AF00548C72 /* FavoriteView.swift */; };
+		5116E5A72B87A32000548C72 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5A62B87A32000548C72 /* CoreDataService.swift */; };
+		5116E5A92B87B4DC00548C72 /* FavoriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5A82B87B4DC00548C72 /* FavoriteCoordinator.swift */; };
+		5116E5AB2B87B71800548C72 /* FavoriteCDservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5AA2B87B71800548C72 /* FavoriteCDservice.swift */; };
+		5116E5AE2B8891C600548C72 /* FavoritePostModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5AC2B8891C600548C72 /* FavoritePostModel.xcdatamodeld */; };
 		5121B0042B28CDC500E0E849 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121B0032B28CDC500E0E849 /* FeedViewModel.swift */; };
 		5121B0062B28CE0700E0E849 /* FeedVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121B0052B28CE0700E0E849 /* FeedVMProtocol.swift */; };
 		5121B0342B2F1D6600E0E849 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121B0332B2F1D6600E0E849 /* BaseCoordinator.swift */; };
@@ -104,6 +109,11 @@
 
 /* Begin PBXFileReference section */
 		5101DB2C2AE03B7F00500802 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		5116E5A22B8672AF00548C72 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		5116E5A62B87A32000548C72 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		5116E5A82B87B4DC00548C72 /* FavoriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoordinator.swift; sourceTree = "<group>"; };
+		5116E5AA2B87B71800548C72 /* FavoriteCDservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCDservice.swift; sourceTree = "<group>"; };
+		5116E5AD2B8891C600548C72 /* FavoritePostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritePostModel.xcdatamodel; sourceTree = "<group>"; };
 		5121B0032B28CDC500E0E849 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		5121B0052B28CE0700E0E849 /* FeedVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVMProtocol.swift; sourceTree = "<group>"; };
 		5121B0332B2F1D6600E0E849 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -184,11 +194,20 @@
 		5101DB2B2AE031A300500802 /* PostGroup */ = {
 			isa = PBXGroup;
 			children = (
+				5116E5A12B86728100548C72 /* FavoritePost */,
 				512220BA2AC96AC400CDCD66 /* InfoViewController.swift */,
 				512220B82AC95E5E00CDCD66 /* PostViewController.swift */,
 				5101DB2C2AE03B7F00500802 /* PostTableViewCell.swift */,
 			);
 			path = PostGroup;
+			sourceTree = "<group>";
+		};
+		5116E5A12B86728100548C72 /* FavoritePost */ = {
+			isa = PBXGroup;
+			children = (
+				5116E5A22B8672AF00548C72 /* FavoriteView.swift */,
+			);
+			path = FavoritePost;
 			sourceTree = "<group>";
 		};
 		5121B0322B2F1D3500E0E849 /* Coordinator */ = {
@@ -198,6 +217,7 @@
 				5121B0352B2F262600E0E849 /* MainCoordinator.swift */,
 				5121B0372B2F317E00E0E849 /* FeedCoordinator.swift */,
 				5121B0392B2F3A7100E0E849 /* ProfileCoordinator.swift */,
+				5116E5A82B87B4DC00548C72 /* FavoriteCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -220,6 +240,8 @@
 				51E19BF12B543D69005538A6 /* AppConfiguration.swift */,
 				51E19BF32B544B08005538A6 /* SerializationData.swift */,
 				51CBEF2B2B55A64A005C20FE /* NetworkError.swift */,
+				5116E5AA2B87B71800548C72 /* FavoriteCDservice.swift */,
+				5116E5A62B87A32000548C72 /* CoreDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -319,6 +341,7 @@
 				516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */,
 				51654F772B24544F0038D9A6 /* CustomUIView */,
 				51DADB8C2B13A2EC0027C3EA /* User */,
+				5116E5AC2B8891C600548C72 /* FavoritePostModel.xcdatamodeld */,
 			);
 			path = "BlinoviOS-39_Navigation_0";
 			sourceTree = "<group>";
@@ -532,6 +555,7 @@
 				51654F7C2B2463480038D9A6 /* FeedModel.swift in Sources */,
 				51654F792B2454A30038D9A6 /* CustomButton.swift in Sources */,
 				5121B0342B2F1D6600E0E849 /* BaseCoordinator.swift in Sources */,
+				5116E5A92B87B4DC00548C72 /* FavoriteCoordinator.swift in Sources */,
 				51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */,
 				51DADB8E2B13A3350027C3EA /* User.swift in Sources */,
 				51E19BF22B543D69005538A6 /* AppConfiguration.swift in Sources */,
@@ -555,11 +579,15 @@
 				5121B0042B28CDC500E0E849 /* FeedViewModel.swift in Sources */,
 				518F34502AE82ABE006EA7E8 /* PhotosCollectionViewCell.swift in Sources */,
 				518F344E2AE82A66006EA7E8 /* PhotosViewController.swift in Sources */,
+				5116E5A72B87A32000548C72 /* CoreDataService.swift in Sources */,
 				51E19BF02B543AD7005538A6 /* UserJSONModel.swift in Sources */,
 				5121B0382B2F317E00E0E849 /* FeedCoordinator.swift in Sources */,
+				5116E5A32B8672AF00548C72 /* FavoriteView.swift in Sources */,
 				51B05CC62AC2BCAF00AF91DC /* SceneDelegate.swift in Sources */,
 				513A74332B1C8ED500E82279 /* LoginFactory.swift in Sources */,
 				5101DB2D2AE03B7F00500802 /* PostTableViewCell.swift in Sources */,
+				5116E5AB2B87B71800548C72 /* FavoriteCDservice.swift in Sources */,
+				5116E5AE2B8891C600548C72 /* FavoritePostModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +992,19 @@
 			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		5116E5AC2B8891C600548C72 /* FavoritePostModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5116E5AD2B8891C600548C72 /* FavoritePostModel.xcdatamodel */,
+			);
+			currentVersion = 5116E5AD2B8891C600548C72 /* FavoritePostModel.xcdatamodel */;
+			path = FavoritePostModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 51B05CB82AC2BCAF00AF91DC /* Project object */;
 }

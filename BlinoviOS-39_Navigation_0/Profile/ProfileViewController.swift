@@ -10,10 +10,8 @@ import StorageService
 
 
 final class ProfileViewController: UIViewController {
-    
-    
+    var favoriteService: IFavoriteCDService?
     let zeroFrame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
-    
     private let posts = Post.createPost()
     private var user: User?
     var profileHeaderView = ProfileHeaderView()
@@ -50,6 +48,14 @@ final class ProfileViewController: UIViewController {
     }()
     
     // MARK: - Main
+    init(favoriteService: IFavoriteCDService?) {
+        self.favoriteService = favoriteService
+        super .init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -214,8 +220,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier:
-                                                        PhotosTableViewCell.identifier, for: indexPath) as!  PhotosTableViewCell
-            cell.callBackTapArrow = profileAction
+                                                        PostTableViewCell.identifier, for: indexPath) as!  PostTableViewCell
+            cell.setupSell(post: posts[indexPath.row])
+            cell.doubleTapAction = { [weak self] in
+                guard let self else { return }
+                self.favoriteService?.addPost(posts[indexPath.row])
+            }
             return cell
         }
     }

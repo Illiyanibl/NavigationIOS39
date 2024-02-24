@@ -14,7 +14,7 @@ public struct Post {
     public var image: String
     public var likes: Int = 0
     public var views: Int = 0
-    public init(title: String = "Nes", text: String = "Some Text" , author: String, description: String, image: String) {
+    public init(title: String = "NoTitle", text: String = "Some Text" , author: String, description: String, image: String) {
         self.title = title
         self.text = text
         self.author = author

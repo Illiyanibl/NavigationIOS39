@@ -34,6 +34,7 @@ extension Coordinator {
 enum AppFlow {
     case feed
     case profile
+    case favorite
 }
 
 protocol FeedBaseCoordinator: Coordinator {
@@ -44,9 +45,15 @@ protocol ProfileBaseCoordinator: Coordinator {
     func showScreen(viewController : UIViewController)
 }
 
+protocol FavoriteBaseCoordinator: Coordinator {
+    func showScreen(viewController : UIViewController)
+}
+
 protocol MainBaseCoordinator: Coordinator {
     var feedCoordinator: FeedBaseCoordinator { get }
     var profileCoordinator: ProfileBaseCoordinator { get }
+    var favoriteCoordinator: FavoriteBaseCoordinator { get }
+    var favoriteService: IFavoriteCDService { get }
     func moveTo(flow: AppFlow)
 }
 

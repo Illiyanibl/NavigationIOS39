@@ -26,11 +26,11 @@ class ProfileCoordinator: ProfileBaseCoordinator {
     
     func start() -> UIViewController {
         let checkerService: CheckerServiceProtocol = CheckerService()
-        var userService: UserService = CurrentUserService()
+        let userService: UserService = CurrentUserService()
         let loginInspector: LoginViewControllerDelegate = LoginInspector(userService: userService, checkerService: checkerService)
 
         let loginViewController = LogInViewController(delegate: loginInspector)
-        let profileViewController =  ProfileViewController()
+        let profileViewController =  ProfileViewController(favoriteService: parentCoordinator?.favoriteService)
         let photosViewController = PhotosViewController()
         
         loginViewController.loginAction = { [weak self] in
