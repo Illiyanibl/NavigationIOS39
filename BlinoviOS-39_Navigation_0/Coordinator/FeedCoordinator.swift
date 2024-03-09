@@ -10,6 +10,7 @@ import StorageService
 
 enum FeedVCActionCases {
     case showPost(Post)
+    case openMap
 }
 enum PostVCActionCases {
     case openInfo
@@ -23,6 +24,8 @@ class FeedCoordinator: FeedBaseCoordinator {
         let postViewController = PostViewController()
         let infoViewController = InfoViewController()
 
+        let mapView = MapView()
+
         let viewModel = FeedViewModel()
         let feedViewController = FeedViewController(feedViewModel: viewModel)
 
@@ -31,6 +34,8 @@ class FeedCoordinator: FeedBaseCoordinator {
             case .showPost(let post) :
                 postViewController.getPost = post
                 self?.showScreen(viewController: postViewController)
+            case .openMap :
+                self?.showScreen(viewController: mapView)
             }
         }
 

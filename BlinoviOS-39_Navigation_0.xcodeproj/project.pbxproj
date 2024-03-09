@@ -14,6 +14,7 @@
 		5116E5A92B87B4DC00548C72 /* FavoriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5A82B87B4DC00548C72 /* FavoriteCoordinator.swift */; };
 		5116E5AB2B87B71800548C72 /* FavoriteCDservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5AA2B87B71800548C72 /* FavoriteCDservice.swift */; };
 		5116E5AE2B8891C600548C72 /* FavoritePostModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5AC2B8891C600548C72 /* FavoritePostModel.xcdatamodeld */; };
+		5116E5E92B98B95C00548C72 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5E82B98B95C00548C72 /* MapView.swift */; };
 		5121B0042B28CDC500E0E849 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121B0032B28CDC500E0E849 /* FeedViewModel.swift */; };
 		5121B0062B28CE0700E0E849 /* FeedVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121B0052B28CE0700E0E849 /* FeedVMProtocol.swift */; };
 		5121B0342B2F1D6600E0E849 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121B0332B2F1D6600E0E849 /* BaseCoordinator.swift */; };
@@ -114,6 +115,7 @@
 		5116E5A82B87B4DC00548C72 /* FavoriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoordinator.swift; sourceTree = "<group>"; };
 		5116E5AA2B87B71800548C72 /* FavoriteCDservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCDservice.swift; sourceTree = "<group>"; };
 		5116E5AD2B8891C600548C72 /* FavoritePostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritePostModel.xcdatamodel; sourceTree = "<group>"; };
+		5116E5E82B98B95C00548C72 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5121B0032B28CDC500E0E849 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		5121B0052B28CE0700E0E849 /* FeedVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVMProtocol.swift; sourceTree = "<group>"; };
 		5121B0332B2F1D6600E0E849 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 			path = FavoritePost;
 			sourceTree = "<group>";
 		};
+		5116E5E72B98B93500548C72 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5116E5E82B98B95C00548C72 /* MapView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		5121B0322B2F1D3500E0E849 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +245,7 @@
 		515390822B4EE27600DC00E2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5116E5E72B98B93500548C72 /* Navigation */,
 				51E19BEE2B543A99005538A6 /* JSON model */,
 				515390832B4EE29200DC00E2 /* NetworkService.swift */,
 				51E19BF12B543D69005538A6 /* AppConfiguration.swift */,
@@ -554,6 +565,7 @@
 				5121B0062B28CE0700E0E849 /* FeedVMProtocol.swift in Sources */,
 				51654F7C2B2463480038D9A6 /* FeedModel.swift in Sources */,
 				51654F792B2454A30038D9A6 /* CustomButton.swift in Sources */,
+				5116E5E92B98B95C00548C72 /* MapView.swift in Sources */,
 				5121B0342B2F1D6600E0E849 /* BaseCoordinator.swift in Sources */,
 				5116E5A92B87B4DC00548C72 /* FavoriteCoordinator.swift in Sources */,
 				51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */,
@@ -874,6 +886,7 @@
 				DEVELOPMENT_TEAM = L24ACGSC43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BlinoviOS-39_Navigation_0/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -902,6 +915,7 @@
 				DEVELOPMENT_TEAM = L24ACGSC43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BlinoviOS-39_Navigation_0/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

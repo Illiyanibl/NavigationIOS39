@@ -24,6 +24,8 @@ class FeedViewController: UIViewController {
         return button
     }()
 
+
+
     lazy var uiLabel: UIButton = {
         let button = CustomButton(title: "", titleColor: .white, backgroundColor: self.view.backgroundColor ?? .black)
         button.layer.cornerRadius = subViewCornerRaduis
@@ -54,10 +56,30 @@ class FeedViewController: UIViewController {
         return button
     }()
 
+    lazy var mapButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Map", for: .normal)
+        button.setTitleColor(.systemRed, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.layer.cornerRadius = showPostButtonCornerRadius
+        button.addTarget(nil, action: #selector(showMap), for: .touchUpInside)
+        return button
+    }()
+
     @objc func showPostButtonPressed() {
         let post = Post(title: "Заголовок поста", text: "Текст поста", author: "", description: "", image: "")
         feedAction?(.showPost(post))
     }
+
+    @objc func showMap() {
+        feedAction?(.openMap)
+    }
+
+
+
+
+
     init(feedViewModel: UsersVMOutput) {
         self.feedViewModel = feedViewModel
         super.init(nibName: nil, bundle: nil)
@@ -83,6 +105,7 @@ class FeedViewController: UIViewController {
         view.addSubview(checkGuessButton)
         view.addSubview(passwordTextField)
         view.addSubview(uiLabel)
+        view.addSubview(mapButton)
     }
 
     private func setupConstraints(){
@@ -91,6 +114,11 @@ class FeedViewController: UIViewController {
             showPostButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             showPostButton.heightAnchor.constraint(equalToConstant: showPostButtonCornerRadius * 2),
             showPostButton.widthAnchor.constraint(equalToConstant:  showPostButtonCornerRadius * 8),
+
+            mapButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            mapButton.topAnchor.constraint(equalTo: showPostButton.topAnchor),
+            mapButton.heightAnchor.constraint(equalTo: showPostButton.heightAnchor),
+            mapButton.widthAnchor.constraint(equalTo: showPostButton.widthAnchor),
 
             checkGuessButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             checkGuessButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
