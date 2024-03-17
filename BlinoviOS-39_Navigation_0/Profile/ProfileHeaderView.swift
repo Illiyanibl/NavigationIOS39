@@ -40,12 +40,12 @@ class ProfileHeaderView : UIView {
         let label =  UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        label.text = "Waiting new status"
+        label.text = NSLocalizedString("WaitingNewStatus", comment: "")
         label.textColor = .systemGray
         return label
     }()
     lazy var showStatusButton: UIButton = {
-        let button = CustomButton(title: "Show status", titleColor: .white, backgroundColor: .systemBlue)
+        let button = CustomButton(title: NSLocalizedString("ShowStatus", comment: ""), titleColor: .white, backgroundColor: .systemBlue)
         button.action = { [weak self] in
             guard let self = self else { return}
             self.actionShowStatusButton()}
@@ -61,7 +61,7 @@ class ProfileHeaderView : UIView {
         let leftPaddingView = UIView(frame: CGRectMake(0, 0, 10, textField.frame.height))
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font =  UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
-        textField.placeholder = "Write new status!"
+        textField.placeholder = NSLocalizedString("WriteNewStatus!", comment: "")
         textField.textColor = .black
         textField.backgroundColor = .white
         textField.leftView = leftPaddingView

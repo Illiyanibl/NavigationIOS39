@@ -25,7 +25,7 @@ class InfoViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .white
-        label.text = "Waitin data"
+        label.text = NSLocalizedString("WaitinData", comment: "")
         return label
     }()
 
@@ -34,7 +34,7 @@ class InfoViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .white
-        label.text = "Waitin data"
+        label.text = NSLocalizedString("WaitinData", comment: "")
         return label
     }()
     override func viewDidLoad(){
@@ -72,10 +72,11 @@ class InfoViewController: UIViewController {
                 let planetJSONModel = SerializationData.planetDecoder(data: planetData)
                 guard let planetJSONModel else {return }
                 guard let orbitalPeriod = planetJSONModel.orbitalPeriod else {
-                    self?.orbitalPeriodLabel.text = "Model error"
+                    self?.orbitalPeriodLabel.text = NSLocalizedString("ModelError", comment: "")
                     return
                 }
-                self?.orbitalPeriodLabel.text = "Orbital Period is \(orbitalPeriod)"
+                self?.orbitalPeriodLabel.text = NSLocalizedString("OrbitalPeriodIs", comment: "") +
+                " \(orbitalPeriod)"
 
             case .failure:
                 break
@@ -98,9 +99,9 @@ class InfoViewController: UIViewController {
         ])}
 
     @objc func showAlert(){
-        let alert = UIAlertController(title: "Alert", message: "Информация", preferredStyle: .alert)
-        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in print("Pressed Cancel")}
-        let actionOk = UIAlertAction(title: "Ok", style: .default) { _ in print("Pressed Ok")}
+        let alert = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("Information", comment: ""), preferredStyle: .alert)
+        let actionCancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in print("Pressed Cancel")}
+        let actionOk = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default) { _ in print("Pressed Ok")}
         alert.addAction(actionOk)
         alert.addAction(actionCancel)
         present(alert, animated: false)

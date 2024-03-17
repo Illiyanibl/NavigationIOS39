@@ -14,9 +14,8 @@ class FeedViewController: UIViewController {
 
     private var feedViewModel: UsersVMOutput
     var feedAction : ((FeedVCActionCases) -> Void)?
-
     lazy var checkGuessButton: UIButton = {
-        let button = CustomButton(title: "Проверить", titleColor: .black, backgroundColor: .lightGray)
+        let button = CustomButton(title: NSLocalizedString("CheckIt", comment: ""), titleColor: .black, backgroundColor: .lightGray)
         button.layer.cornerRadius = subViewCornerRaduis
         button.action = { [weak self] in
             guard let self = self else { return}
@@ -47,7 +46,7 @@ class FeedViewController: UIViewController {
 
     lazy var showPostButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Post", for: .normal)
+        button.setTitle(NSLocalizedString("Post", comment: ""), for: .normal)
         button.setTitleColor(.systemRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
@@ -58,7 +57,7 @@ class FeedViewController: UIViewController {
 
     lazy var mapButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Map", for: .normal)
+        button.setTitle(NSLocalizedString("Map", comment: ""), for: .normal)
         button.setTitleColor(.systemRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
@@ -97,7 +96,7 @@ class FeedViewController: UIViewController {
     private func setupView(){
         view.backgroundColor = .systemFill
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 24)]
-        title = "Feed"
+        title = NSLocalizedString("Feed", comment: "")
         updateButton()
     }
     private func setupSubView(){

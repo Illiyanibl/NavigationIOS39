@@ -74,7 +74,7 @@ final class ProfileViewController: UIViewController {
 #else
         view.backgroundColor = .green
 #endif
-        title = "Profile"
+        title = NSLocalizedString("Profile", comment: "")
         view.addSubviews([postTable])
         
     }

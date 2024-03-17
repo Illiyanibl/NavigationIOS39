@@ -10,7 +10,7 @@ import StorageService
 class PostViewController: UIViewController {
     var getPost: Post?
     var postAction : ((PostVCActionCases) -> Void)?
-    lazy var rightButton : UIBarButtonItem = UIBarButtonItem(title: "Info", style: UIBarButtonItem.Style.plain, target: self, action: #selector(openInfo))
+    lazy var rightButton : UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Info", comment: ""), style: UIBarButtonItem.Style.plain, target: self, action: #selector(openInfo))
 
     override func viewDidLoad() {
         super.viewDidLoad()

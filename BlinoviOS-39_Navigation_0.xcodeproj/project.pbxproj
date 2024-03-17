@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,13 +45,14 @@
 		51B05CC62AC2BCAF00AF91DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */; };
 		51B05CC82AC2BCAF00AF91DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CC72AC2BCAF00AF91DC /* ViewController.swift */; };
 		51B05CCD2AC2BCB000AF91DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */; };
-		51B05CD02AC2BCB000AF91DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */; };
 		51B05CD82AC2C43200AF91DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD72AC2C43200AF91DC /* FeedViewController.swift */; };
 		51B05CDA2AC2C58C00AF91DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */; };
 		51B0CBA62B3DE1A800CD01E8 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0CBA52B3DE1A800CD01E8 /* PasswordGenerator.swift */; };
 		51B0CBAA2B3DE72D00CD01E8 /* BruteForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */; };
 		51CBEF2C2B55A64A005C20FE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CBEF2B2B55A64A005C20FE /* NetworkError.swift */; };
 		51CBEF2E2B55AC68005C20FE /* PlanetsJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CBEF2D2B55AC68005C20FE /* PlanetsJSONModel.swift */; };
+		51CDC3F42BA5DD1300BCB5A0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51CDC3F32BA5DD1300BCB5A0 /* Localizable.xcstrings */; };
+		51CDC3F92BA5E64B00BCB5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CDC3FB2BA5E64B00BCB5A0 /* LaunchScreen.storyboard */; };
 		51CEEC632ADAED760036F2B2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEEC622ADAED760036F2B2 /* LogInViewController.swift */; };
 		51DADB8E2B13A3350027C3EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DADB8D2B13A3350027C3EA /* User.swift */; };
 		51DD2B932AED023A004A7D1A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD2B922AED023A004A7D1A /* PhotoModel.swift */; };
@@ -146,7 +147,6 @@
 		51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		51B05CC72AC2BCAF00AF91DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		51B05CCF2AC2BCB000AF91DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51B05CD12AC2BCB000AF91DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51B05CD72AC2C43200AF91DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		51B05CD92AC2C58C00AF91DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +154,9 @@
 		51B0CBA92B3DE72D00CD01E8 /* BruteForce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForce.swift; sourceTree = "<group>"; };
 		51CBEF2B2B55A64A005C20FE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		51CBEF2D2B55AC68005C20FE /* PlanetsJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsJSONModel.swift; sourceTree = "<group>"; };
+		51CDC3F32BA5DD1300BCB5A0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		51CDC3FA2BA5E64B00BCB5A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		51CDC3FC2BA5E64B00BCB5A0 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LaunchScreen.xcstrings; sourceTree = "<group>"; };
 		51CEEC622ADAED760036F2B2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		51DADB8D2B13A3350027C3EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		51DD2B922AED023A004A7D1A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
@@ -342,17 +345,18 @@
 				51B05CC52AC2BCAF00AF91DC /* SceneDelegate.swift */,
 				51B05CC32AC2BCAF00AF91DC /* AppDelegate.swift */,
 				51B05CC72AC2BCAF00AF91DC /* ViewController.swift */,
+				516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */,
 				51B05CCC2AC2BCB000AF91DC /* Assets.xcassets */,
-				51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */,
+				51CDC3FB2BA5E64B00BCB5A0 /* LaunchScreen.storyboard */,
 				51B05CD12AC2BCB000AF91DC /* Info.plist */,
 				51654F7A2B24632B0038D9A6 /* Feed */,
 				518F344A2AE828B5006EA7E8 /* Photos */,
 				5101DB2B2AE031A300500802 /* PostGroup */,
 				512220BC2ACBD2E800CDCD66 /* Profile */,
-				516AF8BF2AD5417B00AE1597 /* UIViewExtension.swift */,
 				51654F772B24544F0038D9A6 /* CustomUIView */,
 				51DADB8C2B13A2EC0027C3EA /* User */,
 				5116E5AC2B8891C600548C72 /* FavoritePostModel.xcdatamodeld */,
+				51CDC3F32BA5DD1300BCB5A0 /* Localizable.xcstrings */,
 			);
 			path = "BlinoviOS-39_Navigation_0";
 			sourceTree = "<group>";
@@ -492,6 +496,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 51B05CB72AC2BCAF00AF91DC;
 			packageReferences = (
@@ -528,8 +533,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51B05CD02AC2BCB000AF91DC /* LaunchScreen.storyboard in Resources */,
+				51CDC3F92BA5E64B00BCB5A0 /* LaunchScreen.storyboard in Resources */,
 				51B05CCD2AC2BCB000AF91DC /* Assets.xcassets in Resources */,
+				51CDC3F42BA5DD1300BCB5A0 /* Localizable.xcstrings in Resources */,
 				51E874432B6560F400CFC818 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,10 +635,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		51B05CCE2AC2BCB000AF91DC /* LaunchScreen.storyboard */ = {
+		51CDC3FB2BA5E64B00BCB5A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				51B05CCF2AC2BCB000AF91DC /* Base */,
+				51CDC3FA2BA5E64B00BCB5A0 /* Base */,
+				51CDC3FC2BA5E64B00BCB5A0 /* mul */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -764,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -825,6 +833,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

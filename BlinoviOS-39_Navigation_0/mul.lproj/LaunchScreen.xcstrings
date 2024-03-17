@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Trn-aI-u7w.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"Trn-aI-u7w\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лебел не работает"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

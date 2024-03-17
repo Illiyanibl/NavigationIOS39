@@ -27,16 +27,16 @@ class MainCoordinator: MainBaseCoordinator {
     func start() -> UIViewController {
         favoriteCoordinator.parentCoordinator = self
         let favoriteViewController  = favoriteCoordinator.start()
-        favoriteViewController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(named: "favorite"), tag: 2)
+        favoriteViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Favorite", comment: ""), image: UIImage(named: "favorite"), tag: 2)
 
         feedCoordinator.parentCoordinator = self
         let feedViewController = feedCoordinator.start()
-        feedViewController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(named: "feed"), tag: 0)
-        
+        feedViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Feed", comment: ""), image: UIImage(named: "feed"), tag: 0)
+
         profileCoordinator.parentCoordinator = self
         let profileViewController = profileCoordinator.start()
-        profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile") , tag: 1)
-        
+        profileViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Profile", comment: ""), image: UIImage(named: "profile") , tag: 1)
+
         (rootViewController as? UITabBarController)?.viewControllers = [feedViewController, profileViewController, favoriteViewController]
         
         return rootViewController

@@ -7,13 +7,21 @@
 
 import UIKit
 
+extension String {
+    var localize: String {
+        NSLocalizedString(self, comment: "")
+    }
+    var multiLocalize: String {
+        NSLocalizedString(self, tableName: "loacalize", comment: "")
+    }
+}
+
+
 extension UIView {
     static var identifier: String {
         String(describing: self)
     }
-}
 
-extension UIView {
     func addSubviews(_ subviesList: [UIView]) {
         subviesList.forEach(){
             $0.translatesAutoresizingMaskIntoConstraints = false

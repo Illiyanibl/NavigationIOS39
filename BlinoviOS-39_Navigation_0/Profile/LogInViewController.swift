@@ -65,7 +65,7 @@ final class LogInViewController: UIViewController {
 
     private lazy var  loginText: UITextField = {
         let text = UITextField()
-        text.placeholder = "Login"
+        text.placeholder = NSLocalizedString("Login", comment: "")
         text.text = "admin"
         text.autocapitalizationType = .none
         text.indent(size: 16)
@@ -78,7 +78,7 @@ final class LogInViewController: UIViewController {
 
     private lazy var passwordText: UITextField = {
         let text = UITextField()
-        text.placeholder = "Password"
+        text.placeholder = NSLocalizedString("Password", comment: "")
         text.text = "123456"
         text.backgroundColor = .darkGray.withAlphaComponent(0.3)
         text.textColor = .black
@@ -98,7 +98,7 @@ final class LogInViewController: UIViewController {
     }()
 
     private lazy var loginButton: UIButton = {
-        let button = CustomButton(title: "Log In", titleColor: .white)
+        let button = CustomButton(title: NSLocalizedString("LogIn", comment: ""), titleColor: .white)
         button.setBackgroundImage(UIImage(named: "bluePixel"), for: .normal)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
@@ -111,7 +111,7 @@ final class LogInViewController: UIViewController {
     }()
 
     private lazy var bruteButton: UIButton = {
-        let button = CustomButton(title: "Подобрать пароль", titleColor: .white)
+        let button = CustomButton(title: NSLocalizedString("ResearchPassword", comment: ""), titleColor: .white)
         button.setBackgroundImage(UIImage(named: "bluePixel"), for: .normal)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
@@ -211,15 +211,14 @@ final class LogInViewController: UIViewController {
         }
         delegate?.authAction = {[weak self] user in
             self?.activityIndicator.stopAnimating()
-            print("Открываю профиль \(user.login)")
             self?.loginAction?(.autorisation(user))
         }
         delegate?.check(login: loginText.text, password: passwordText.text)
     }
 
     private func authorisationError(description: String) {
-        let alert = UIAlertController(title: "Authorisation error", message: description, preferredStyle: .alert)
-        let actionOk = UIAlertAction(title: "Ok", style: .default) { _ in }
+        let alert = UIAlertController(title: NSLocalizedString("AuthorisationError", comment: ""), message: description, preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default) { _ in }
         alert.addAction(actionOk)
         present(alert, animated: true)
     }

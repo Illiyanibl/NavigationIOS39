@@ -18,7 +18,7 @@ final class MapView: UIViewController {
 
     lazy var goButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Go", for: .normal)
+        button.setTitle(NSLocalizedString("Go", comment: ""), for: .normal)
         button.setTitleColor(.systemRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white.withAlphaComponent(0.7)
@@ -71,7 +71,7 @@ final class MapView: UIViewController {
     private func setPoint(location: CLLocationCoordinate2D) {
         let annotaion = MKPointAnnotation()
         userCoordinate = locationManager.location?.coordinate
-        annotaion.title = "Destination"
+        annotaion.title = NSLocalizedString("Destination", comment: "")
         let anotaionCoordinate = location
         annotaion.coordinate = anotaionCoordinate
         if points.isEmpty {
