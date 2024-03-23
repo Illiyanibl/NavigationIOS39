@@ -50,7 +50,7 @@ class ProfileHeaderView : UIView {
             guard let self = self else { return}
             self.actionShowStatusButton()}
         button.layer.cornerRadius = 4
-        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowColor = UIColor.systemFill.cgColor
         button.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.layer.shadowRadius = 4
         button.layer.shadowOpacity = 0.7
@@ -62,12 +62,12 @@ class ProfileHeaderView : UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font =  UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
         textField.placeholder = NSLocalizedString("WriteNewStatus!", comment: "")
-        textField.textColor = .black
-        textField.backgroundColor = .white
+        textField.textColor = .systemGray6
+        textField.backgroundColor = .systemGray
         textField.leftView = leftPaddingView
         textField.leftViewMode = UITextField.ViewMode.always
         textField.layer.cornerRadius = 12
-        textField.layer.borderColor = UIColor.black.cgColor
+        textField.layer.borderColor = UIColor.systemFill.cgColor
         textField.layer.borderWidth = 1
         textField.addTarget(nil, action: #selector(statusTextChanged), for: .editingChanged)
         return textField
@@ -89,7 +89,7 @@ class ProfileHeaderView : UIView {
     }
 
     private func setupView(){
-        self.backgroundColor = .lightGray
+        self.backgroundColor = .systemGray6
         self.addSubviews([tapView, nameLabel, showStatusButton, statusTextField, statusLabel])
         tapView.addSubviews([avatarView])
     }

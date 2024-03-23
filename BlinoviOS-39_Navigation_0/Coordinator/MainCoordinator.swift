@@ -16,8 +16,8 @@ class MainCoordinator: MainBaseCoordinator {
         let tabBarController = UITabBarController()
         tabBarController.tabBar.barStyle = .default
         tabBarController.tabBar.backgroundColor = .systemBackground
-        tabBarController.tabBar.tintColor = .systemRed
-        tabBarController.tabBar.unselectedItemTintColor = .systemRed.withAlphaComponent(0.4)
+        tabBarController.tabBar.tintColor = .systemGray
+        tabBarController.tabBar.unselectedItemTintColor = .systemGray.withAlphaComponent(0.5)
         return tabBarController
     }()
     var profileCoordinator: ProfileBaseCoordinator = ProfileCoordinator()

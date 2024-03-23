@@ -52,6 +52,7 @@ final class PhotosTableViewCell: UITableViewCell {
         let button = UIButton()
         button.addTarget(self, action: #selector(tapPhotosButton), for: .touchUpInside)
         button.setBackgroundImage(UIImage(named: "arrow"), for: .normal)
+        button.tintColor = .systemGray
         return button
     }()
 
@@ -71,7 +72,7 @@ final class PhotosTableViewCell: UITableViewCell {
     }
 
     private func setupView(){
-        self.backgroundColor = .white
+        self.backgroundColor = .systemBackground
     }
 
     private func setupSubView(){
