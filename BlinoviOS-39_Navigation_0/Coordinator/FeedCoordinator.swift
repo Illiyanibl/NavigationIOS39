@@ -45,7 +45,6 @@ class FeedCoordinator: FeedBaseCoordinator {
                 self?.navigationRootViewController?.present(infoViewController, animated: true)
             }
         }
-        
 
         rootViewController = UINavigationController(rootViewController: feedViewController)
         return rootViewController

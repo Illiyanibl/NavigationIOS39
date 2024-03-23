@@ -69,8 +69,6 @@ final class LogInViewController: UIViewController {
         text.text = "admin"
         text.autocapitalizationType = .none
         text.indent(size: 16)
-        text.backgroundColor = .systemGray6
-        text.textColor = .systemGray
         text.translatesAutoresizingMaskIntoConstraints = false
         text.delegate = self
         return text
@@ -80,8 +78,6 @@ final class LogInViewController: UIViewController {
         let text = UITextField()
         text.placeholder = NSLocalizedString("Password", comment: "")
         text.text = "123456"
-        text.backgroundColor = .systemGray6
-        text.textColor = .systemGray
         text.autocapitalizationType = .none
         text.indent(size: 16)
         text.isSecureTextEntry = true

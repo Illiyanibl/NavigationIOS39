@@ -15,7 +15,7 @@ class FeedViewController: UIViewController {
     private var feedViewModel: UsersVMOutput
     var feedAction : ((FeedVCActionCases) -> Void)?
     lazy var checkGuessButton: UIButton = {
-        let button = CustomButton(title: NSLocalizedString("CheckIt", comment: ""), titleColor: .systemGray, backgroundColor: .systemGray5)
+        let button = CustomButton(title: NSLocalizedString("CheckIt", comment: ""),titleColor: .systemGray, backgroundColor: .systemGray6)
         button.layer.cornerRadius = subViewCornerRaduis
         button.layer.borderColor = UIColor.systemFill.cgColor
         button.layer.borderWidth = 2
@@ -28,7 +28,7 @@ class FeedViewController: UIViewController {
 
 
     lazy var uiLabel: UIButton = {
-        let button = CustomButton(title: "", titleColor: .white, backgroundColor: self.view.backgroundColor ?? .black)
+        let button = CustomButton(title: "", titleColor: .white, backgroundColor: .black)
         button.layer.cornerRadius = subViewCornerRaduis
         return button
     }()
@@ -39,10 +39,8 @@ class FeedViewController: UIViewController {
         text.layer.cornerRadius = subViewCornerRaduis
         text.indent(size: 16)
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.backgroundColor = .systemGray4
         text.layer.borderColor = UIColor.systemFill.cgColor
         text.layer.borderWidth = 2
-        text.textColor = .black
         return text
     }()
 
@@ -53,7 +51,6 @@ class FeedViewController: UIViewController {
         button.setTitle(NSLocalizedString("Post", comment: ""), for: .normal)
         button.setTitleColor(.systemRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemGray6
         button.layer.borderColor = UIColor.systemFill.cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = showPostButtonCornerRadius
@@ -66,7 +63,6 @@ class FeedViewController: UIViewController {
         button.setTitle(NSLocalizedString("Map", comment: ""), for: .normal)
         button.setTitleColor(.systemRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemGray6
         button.layer.borderColor = UIColor.systemFill.cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = showPostButtonCornerRadius
@@ -102,8 +98,9 @@ class FeedViewController: UIViewController {
         setupConstraints()
     }
     private func setupView(){
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 24)]
+        navigationController?.navigationBar.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 24)]
         title = NSLocalizedString("Feed", comment: "")
+        uiLabel.backgroundColor = .systemBackground
         updateButton()
     }
     private func setupSubView(){

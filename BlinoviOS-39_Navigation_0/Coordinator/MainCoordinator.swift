@@ -16,6 +16,7 @@ class MainCoordinator: MainBaseCoordinator {
         let tabBarController = UITabBarController()
         tabBarController.tabBar.barStyle = .default
         tabBarController.tabBar.backgroundColor = .systemBackground
+        tabBarController.view.backgroundColor = .systemBackground
         tabBarController.tabBar.tintColor = .systemGray
         tabBarController.tabBar.unselectedItemTintColor = .systemGray.withAlphaComponent(0.5)
         return tabBarController
@@ -25,6 +26,7 @@ class MainCoordinator: MainBaseCoordinator {
 
     
     func start() -> UIViewController {
+
         favoriteCoordinator.parentCoordinator = self
         let favoriteViewController  = favoriteCoordinator.start()
         favoriteViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Favorite", comment: ""), image: UIImage(named: "favorite"), tag: 2)

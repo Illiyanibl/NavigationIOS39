@@ -34,7 +34,6 @@ final class FavoriteView : UIViewController, IFavoriteView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
         setupView()
         setupConstraints(safeArea: view.safeAreaLayoutGuide)
     }
