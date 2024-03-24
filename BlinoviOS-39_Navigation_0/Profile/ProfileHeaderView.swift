@@ -7,10 +7,14 @@
 
 import UIKit
 
+
 class ProfileHeaderView : UIView {
     var avatarSize: CGFloat  = 120
     var avatarTapCallBack: (() -> Void)?
-    
+    let nameColor = UIColor.createColor(lightMode: .darkText, darkMode: .systemYellow)
+    let statusColor = UIColor.createColor(lightMode: .darkGray, darkMode: .systemOrange)
+    let backgraundText = UIColor.createColor(lightMode: .black.withAlphaComponent(0.1), darkMode: .white.withAlphaComponent(0.1))
+
     lazy var avatarView: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = avatarSize  / 2
@@ -33,6 +37,7 @@ class ProfileHeaderView : UIView {
         let label =  UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.text = "View point"
+        label.textColor = nameColor
         return label
     }()
     
@@ -41,7 +46,7 @@ class ProfileHeaderView : UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.text = NSLocalizedString("WaitingNewStatus", comment: "")
-        label.textColor = .systemGray
+        label.textColor = statusColor
         return label
     }()
     lazy var showStatusButton: UIButton = {
@@ -62,7 +67,7 @@ class ProfileHeaderView : UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font =  UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
         textField.placeholder = NSLocalizedString("WriteNewStatus!", comment: "")
-        textField.textColor = .systemGray6
+        textField.textColor = statusColor
         textField.backgroundColor = .systemGray
         textField.leftView = leftPaddingView
         textField.leftViewMode = UITextField.ViewMode.always
