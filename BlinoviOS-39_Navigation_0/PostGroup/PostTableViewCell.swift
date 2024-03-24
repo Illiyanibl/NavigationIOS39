@@ -24,7 +24,7 @@ class PostTableViewCell: UITableViewCell {
         let labelFont = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.numberOfLines = 0
         label.font = labelFont
-        label.textColor = .systemGray
+        label.textColor = UIColor.textColor
         
         return label
     }()

@@ -11,11 +11,14 @@ import StorageService
 class FeedViewController: UIViewController {
 
     let subViewCornerRaduis: CGFloat = 20
+    let buttonBackgraundColor = UIColor.createColor(lightMode: .black.withAlphaComponent(0.2), darkMode: .white.withAlphaComponent(0.2))
 
     private var feedViewModel: UsersVMOutput
     var feedAction : ((FeedVCActionCases) -> Void)?
     lazy var checkGuessButton: UIButton = {
-        let button = CustomButton(title: NSLocalizedString("CheckIt", comment: ""),titleColor: .systemGray, backgroundColor: .systemGray6)
+        let button = CustomButton(title: NSLocalizedString("CheckIt", comment: ""), backgroundColor: .systemBackground)
+        button.setTitleColor(UIColor.textColor, for: .normal)
+        button.backgroundColor = buttonBackgraundColor
         button.layer.cornerRadius = subViewCornerRaduis
         button.layer.borderColor = UIColor.systemFill.cgColor
         button.layer.borderWidth = 2
@@ -49,7 +52,8 @@ class FeedViewController: UIViewController {
     lazy var showPostButton: UIButton = {
         let button = UIButton()
         button.setTitle(NSLocalizedString("Post", comment: ""), for: .normal)
-        button.setTitleColor(.systemRed, for: .normal)
+        button.setTitleColor(UIColor.textColor, for: .normal)
+        button.backgroundColor = buttonBackgraundColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.systemFill.cgColor
         button.layer.borderWidth = 2
@@ -61,7 +65,8 @@ class FeedViewController: UIViewController {
     lazy var mapButton: UIButton = {
         let button = UIButton()
         button.setTitle(NSLocalizedString("Map", comment: ""), for: .normal)
-        button.setTitleColor(.systemRed, for: .normal)
+        button.setTitleColor(UIColor.textColor, for: .normal)
+        button.backgroundColor = buttonBackgraundColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.systemFill.cgColor
         button.layer.borderWidth = 2
@@ -96,6 +101,10 @@ class FeedViewController: UIViewController {
         setupView()
         setupSubView()
         setupConstraints()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+      //  viewDidLoad()
     }
     private func setupView(){
         navigationController?.navigationBar.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 24)]
